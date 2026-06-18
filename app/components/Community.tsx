@@ -1,4 +1,5 @@
-import { communityWork } from "../data/portfolio";
+import { communityWork, sectionHeadings } from "../data/portfolio";
+import { BilingualBody, BilingualHeading, BilingualInline } from "./Bilingual";
 import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
 
@@ -8,9 +9,9 @@ export function Community() {
       <div className="container-width">
         <AnimateIn>
           <SectionHeading
-            label="Foundation & Community Service"
-            title="Community Engagement"
-            description="Contributing to social development beyond the university through foundation leadership and outreach."
+            label={sectionHeadings.community.label}
+            title={sectionHeadings.community.title}
+            description={sectionHeadings.community.description}
           />
         </AnimateIn>
 
@@ -24,30 +25,39 @@ export function Community() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-serif text-xl font-bold text-foreground sm:text-2xl">
-                    {communityWork.organization}
-                  </h3>
-                  <p className="mt-1.5 font-medium text-accent">{communityWork.role}</p>
+                  <BilingualHeading text={communityWork.organization} as="h3" size="card" />
+                  <BilingualInline
+                    text={communityWork.role}
+                    primaryClassName="font-thai mt-2 font-semibold text-accent"
+                    secondaryClassName="text-sm font-medium text-accent-muted"
+                  />
                 </div>
               </div>
-              <p className="prose-academic">{communityWork.description}</p>
+              <BilingualBody text={communityWork.description} />
             </div>
           </AnimateIn>
 
           <AnimateIn delay={200} className="lg:col-span-2">
-            <h3 className="mb-5 font-serif text-lg font-semibold text-foreground">
-              Key Contributions
-            </h3>
+            <BilingualHeading
+              text={communityWork.contributionsHeading}
+              as="h3"
+              size="small"
+              className="mb-5"
+            />
             <ul className="space-y-3">
               {communityWork.highlights.map((item) => (
                 <li
-                  key={item}
-                  className="flex items-start gap-3 rounded-xl border border-card-border bg-card p-4 text-sm text-muted"
+                  key={item.en}
+                  className="flex items-start gap-3 rounded-xl border border-card-border bg-card p-4"
                 >
-                  <svg className="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
-                  {item}
+                  <BilingualInline
+                    text={item}
+                    primaryClassName="font-thai text-sm text-foreground"
+                    secondaryClassName="text-xs text-muted"
+                  />
                 </li>
               ))}
             </ul>

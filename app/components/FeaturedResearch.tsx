@@ -1,4 +1,5 @@
-import { featuredResearch } from "../data/portfolio";
+import { featuredResearch, sectionHeadings } from "../data/portfolio";
+import { BilingualBody, BilingualHeading } from "./Bilingual";
 import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
 
@@ -8,32 +9,21 @@ export function FeaturedResearch() {
       <div className="container-width">
         <AnimateIn>
           <SectionHeading
-            label="Featured Research"
-            title="Selected Research Focus"
-            description="Core research initiatives at the intersection of data science, spatial analytics, and institutional digital transformation."
+            label={sectionHeadings.featuredResearch.label}
+            title={sectionHeadings.featuredResearch.title}
+            description={sectionHeadings.featuredResearch.description}
           />
         </AnimateIn>
 
         <div className="space-y-6">
           {featuredResearch.map((item, index) => (
-            <AnimateIn key={item.title} delay={index * 120}>
+            <AnimateIn key={item.title.en} delay={index * 120}>
               <article className="group rounded-2xl border border-card-border bg-card p-8 transition-all duration-300 hover:border-accent-muted hover:shadow-lg sm:p-10">
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="flex-1">
-                    <div className="mb-3 flex items-center gap-3">
-                      <span className="font-mono text-sm font-semibold text-accent-muted">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="rounded-full bg-accent-light px-3 py-0.5 text-xs font-semibold uppercase tracking-wide text-accent">
-                        {item.status}
-                      </span>
-                    </div>
-                    <h3 className="font-serif text-xl font-bold leading-snug text-foreground sm:text-2xl">
-                      {item.title}
-                    </h3>
-                    <p className="prose-academic mt-4 max-w-3xl">{item.summary}</p>
-                  </div>
+                <div className="mb-4 font-mono text-sm font-semibold text-accent-muted">
+                  {String(index + 1).padStart(2, "0")}
                 </div>
+                <BilingualHeading text={item.title} as="h3" size="card" />
+                <BilingualBody text={item.summary} className="mt-4 max-w-3xl" />
                 <div className="mt-6 flex flex-wrap gap-2 border-t border-card-border pt-6">
                   {item.methods.map((method) => (
                     <span

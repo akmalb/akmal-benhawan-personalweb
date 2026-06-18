@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { navLinks } from "../data/portfolio";
+import { BilingualNav } from "./Bilingual";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
@@ -25,27 +26,28 @@ export function Navbar() {
       <nav className="container-width flex items-center justify-between py-4">
         <a
           href="#home"
-          className="font-serif text-lg font-bold text-foreground transition-colors hover:text-accent"
+          className="font-thai text-base font-bold text-foreground transition-colors hover:text-accent sm:text-lg"
         >
-          Akmal Benhawan
+          อักมาล เบนหวัน
+          <span className="ml-1.5 text-xs font-normal text-muted">(Akmal Benhawan)</span>
         </a>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-0.5 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-accent"
+              className="rounded-md px-2.5 py-2 transition-colors hover:text-accent"
             >
-              {link.label}
+              <BilingualNav text={link.label} />
             </a>
           ))}
-          <div className="ml-3 border-l border-card-border pl-3">
+          <div className="ml-2 border-l border-card-border pl-2">
             <ThemeToggle />
           </div>
         </div>
 
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-3 lg:hidden">
           <ThemeToggle />
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -64,16 +66,16 @@ export function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="border-t border-card-border bg-card px-6 py-4 md:hidden">
+        <div className="border-t border-card-border bg-card px-6 py-4 lg:hidden">
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-light hover:text-accent"
+                className="rounded-md px-3 py-2.5 transition-colors hover:bg-accent-light"
               >
-                {link.label}
+                <BilingualNav text={link.label} />
               </a>
             ))}
           </div>

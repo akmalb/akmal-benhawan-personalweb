@@ -1,4 +1,5 @@
-import { personalInfo } from "../data/portfolio";
+import { contactContent, personalInfo, sectionHeadings } from "../data/portfolio";
+import { BilingualBody, BilingualButton, BilingualHeading, BilingualInline } from "./Bilingual";
 import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
 
@@ -8,18 +9,20 @@ export function Contact() {
       <div className="container-width">
         <AnimateIn>
           <SectionHeading
-            label="Contact"
-            title="Get in Touch"
-            description="Open to research collaboration, institutional partnerships, and community initiatives."
+            label={sectionHeadings.contact.label}
+            title={sectionHeadings.contact.title}
+            description={sectionHeadings.contact.description}
           />
         </AnimateIn>
 
         <div className="grid gap-8 lg:grid-cols-2">
           <AnimateIn delay={100}>
             <div className="h-full rounded-2xl border border-card-border bg-card p-8 sm:p-10">
-              <h3 className="font-serif text-xl font-semibold text-foreground">
-                Contact Information
-              </h3>
+              <BilingualHeading
+                text={contactContent.infoHeading}
+                as="h3"
+                size="small"
+              />
               <dl className="mt-8 space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-light text-accent">
@@ -28,15 +31,19 @@ export function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <dt className="text-sm text-muted">Email</dt>
-                    <dd className="mt-0.5">
+                    <BilingualInline
+                      text={contactContent.labels.email}
+                      primaryClassName="font-thai text-sm text-muted"
+                      secondaryClassName="text-xs text-muted"
+                    />
+                    <div className="mt-1">
                       <a
                         href={`mailto:${personalInfo.email}`}
                         className="font-medium text-foreground transition-colors hover:text-accent"
                       >
                         {personalInfo.email}
                       </a>
-                    </dd>
+                    </div>
                   </div>
                 </div>
 
@@ -47,8 +54,18 @@ export function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <dt className="text-sm text-muted">Institution</dt>
-                    <dd className="mt-0.5 font-medium text-foreground">{personalInfo.institution}</dd>
+                    <BilingualInline
+                      text={contactContent.labels.institution}
+                      primaryClassName="font-thai text-sm text-muted"
+                      secondaryClassName="text-xs text-muted"
+                    />
+                    <div className="mt-1">
+                      <BilingualInline
+                        text={personalInfo.institution}
+                        primaryClassName="font-thai font-medium text-foreground"
+                        secondaryClassName="text-sm text-muted"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -60,8 +77,18 @@ export function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <dt className="text-sm text-muted">Location</dt>
-                    <dd className="mt-0.5 font-medium text-foreground">{personalInfo.location}</dd>
+                    <BilingualInline
+                      text={contactContent.labels.location}
+                      primaryClassName="font-thai text-sm text-muted"
+                      secondaryClassName="text-xs text-muted"
+                    />
+                    <div className="mt-1">
+                      <BilingualInline
+                        text={personalInfo.location}
+                        primaryClassName="font-thai font-medium text-foreground"
+                        secondaryClassName="text-sm text-muted"
+                      />
+                    </div>
                   </div>
                 </div>
               </dl>
@@ -70,28 +97,29 @@ export function Contact() {
 
           <AnimateIn delay={200}>
             <div className="flex h-full flex-col justify-center rounded-2xl border border-accent/20 bg-accent p-8 text-white sm:p-10">
-              <h3 className="font-serif text-2xl font-bold sm:text-3xl">Let&apos;s Collaborate</h3>
-              <p className="mt-5 leading-relaxed text-blue-100/90">
-                Whether you are a researcher, institution, or community organization, I welcome
-                opportunities to collaborate on data-driven projects, AI applications, and digital
-                transformation initiatives.
-              </p>
+              <BilingualHeading
+                text={contactContent.collaborateHeading}
+                as="h3"
+                size="card"
+                tone="inverted"
+              />
+              <BilingualBody text={contactContent.collaborateText} tone="inverted" className="mt-5" />
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-accent transition-all hover:bg-blue-50"
+                  className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-accent transition-all hover:bg-blue-50"
                 >
-                  Send an Email
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <BilingualButton text={contactContent.sendEmail} />
+                  <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
                 <a
                   href={personalInfo.cvUrl}
                   download
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-5 py-3 transition-all hover:bg-white/10"
                 >
-                  Download CV
+                  <BilingualButton text={contactContent.downloadCv} />
                 </a>
               </div>
             </div>

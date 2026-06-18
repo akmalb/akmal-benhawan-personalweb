@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { projects } from "../data/portfolio";
+import { projects, sectionHeadings } from "../data/portfolio";
+import { BilingualBody } from "./Bilingual";
 import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
 
@@ -9,9 +10,9 @@ export function Projects() {
       <div className="container-width">
         <AnimateIn>
           <SectionHeading
-            label="Projects"
-            title="Digital Systems & Platforms"
-            description="Technology initiatives developed to support Yala Rajabhat University's digital ecosystem."
+            label={sectionHeadings.projects.label}
+            title={sectionHeadings.projects.title}
+            description={sectionHeadings.projects.description}
           />
         </AnimateIn>
 
@@ -36,7 +37,7 @@ export function Projects() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <p className="prose-academic mt-3 text-[0.9375rem]">{project.description}</p>
+                  <BilingualBody text={project.description} className="mt-3" />
                   <div className="mt-5 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span

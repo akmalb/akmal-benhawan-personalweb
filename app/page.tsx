@@ -1,10 +1,9 @@
-import { Navbar } from "./components/Navbar";
+﻿import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { Stats } from "./components/Stats";
+import { Roles } from "./components/Roles";
 import { About } from "./components/About";
 import { FeaturedResearch } from "./components/FeaturedResearch";
 import { Research } from "./components/Research";
-import { Publications } from "./components/Publications";
 import { Projects } from "./components/Projects";
 import { Training } from "./components/Training";
 import { Community } from "./components/Community";
@@ -17,11 +16,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Stats />
+        <Roles />
         <About />
         <FeaturedResearch />
         <Research />
-        <Publications />
         <Projects />
         <Training />
         <Community />

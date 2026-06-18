@@ -1,4 +1,5 @@
-import { personalInfo, socialLinks } from "../data/portfolio";
+import { footerContent, personalInfo, socialLinks } from "../data/portfolio";
+import { BilingualInline } from "./Bilingual";
 
 const icons: Record<string, React.ReactNode> = {
   github: (
@@ -26,8 +27,13 @@ export function Footer() {
       <div className="container-width section-padding !py-12">
         <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between">
           <div className="text-center sm:text-left">
-            <p className="font-serif text-lg font-bold text-foreground">{personalInfo.name}</p>
-            <p className="mt-1 text-sm text-muted">{personalInfo.institution}</p>
+            <p className="font-thai text-lg font-bold text-foreground">{personalInfo.name}</p>
+            <p className="text-sm text-muted">({personalInfo.nameEn})</p>
+            <BilingualInline
+              text={personalInfo.institution}
+              primaryClassName="font-thai mt-1 text-sm text-muted"
+              secondaryClassName="text-xs text-muted"
+            />
           </div>
 
           <div className="flex items-center gap-3">
@@ -55,8 +61,11 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-card-border pt-8 text-center">
-          <p className="text-sm text-muted">
-            &copy; {year} {personalInfo.name}. All rights reserved.
+          <p className="font-thai text-sm text-muted">
+            &copy; {year} {personalInfo.name} — {footerContent.rights.th}
+          </p>
+          <p className="mt-0.5 text-xs text-muted">
+            {footerContent.rights.en}
           </p>
         </div>
       </div>
