@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#1a3a6b"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#2d5a9e"/>
+      <stop offset="100%" stop-color="#1a3a6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#g)"/>
+  <circle cx="200" cy="155" r="72" fill="#4a8fd4" opacity="0.35"/>
+  <circle cx="200" cy="140" r="58" fill="#e8eef6"/>
+  <ellipse cx="200" cy="310" rx="110" ry="90" fill="#e8eef6"/>
+  <text x="200" y="365" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="600" fill="#ffffff" opacity="0.9">Akmal Benhawan</text>
+  <text x="200" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#8bb8ea" letter-spacing="3">PROFILE PHOTO</text>
+</svg>
