@@ -40,27 +40,10 @@ export const profile = {
         location: "พื้นที่ปฏิบัติงาน",
       },
     },
-    contactSection: {
-      label: "ติดต่อ",
-      title: "ช่องทางติดต่อ",
-      description:
-        "สำหรับการติดต่องานวิจัย ความร่วมมือด้านระบบสารสนเทศ หรือการบรรยาย",
-    },
-    contact: {
-      infoHeading: "ข้อมูลติดต่อ",
-      labels: {
-        email: "อีเมล",
-        institution: "สังกัด",
-        location: "พื้นที่ปฏิบัติงาน",
-      },
-      collaborateHeading: "ติดต่อเพื่อความร่วมมือ",
-      collaborateText:
-        "หากท่านสนใจร่วมงานด้านงานวิจัย การพัฒนาระบบสารสนเทศ หรือการเชิญบรรยาย สามารถติดต่อได้ทางอีเมล",
-      sendEmail: "ส่งอีเมล",
-      downloadCv: "ดาวน์โหลดประวัติ",
-    },
     footer: {
-      rights: "สงวนลิขสิทธิ์",
+      line1: "Akmal Benhawan",
+      line2: "Computer Academic Officer, Yala Rajabhat University",
+      copyright: "All rights reserved.",
     },
     metadata: {
       title: "อักมาล เบ็ญหาวัน | นักวิชาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏยะลา",
@@ -117,34 +100,17 @@ export const profile = {
         location: "Location",
       },
     },
-    contactSection: {
-      label: "Contact",
-      title: "Get in Touch",
-      description:
-        "For research inquiries, information systems collaboration, or speaking engagements.",
-    },
-    contact: {
-      infoHeading: "Contact Information",
-      labels: {
-        email: "Email",
-        institution: "Affiliation",
-        location: "Location",
-      },
-      collaborateHeading: "Collaboration Inquiries",
-      collaborateText:
-        "For research collaboration, information systems development, or speaking invitations, please reach out via email.",
-      sendEmail: "Send Email",
-      downloadCv: "Download CV",
-    },
     footer: {
-      rights: "All rights reserved.",
+      line1: "Akmal Benhawan",
+      line2: "Computer Academic Officer, Yala Rajabhat University",
+      copyright: "All rights reserved.",
     },
     metadata: {
       title: "Akmal Benhawan | Computer Academic Officer, Yala Rajabhat University",
       description:
         "Academic portfolio of Akmal Benhawan, Computer Academic Officer at Yala Rajabhat University. Research in artificial intelligence, data analytics, and big data.",
       keywords: [
-        "อักมาล เบ็ญาหวัน",
+        "อักมาล เบ็ญหาวัน",
         "Akmal Benhawan",
         "Yala Rajabhat University",
         "Computer Academic Officer",
@@ -173,7 +139,8 @@ export const profile = {
   navLinks: [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
-    { href: "#featured-research", label: "Research" },
+    { href: "#research", label: "Research" },
+    { href: "#publications", label: "Publications" },
     { href: "#projects", label: "Projects" },
     { href: "#training", label: "Training" },
     { href: "#community", label: "Foundation" },

@@ -100,6 +100,20 @@ export function BilingualLabel({ th, en, className = "" }: BilingualLabelProps) 
   );
 }
 
+interface BilingualChipProps {
+  th: string;
+  en: string;
+}
+
+export function BilingualChip({ th, en }: BilingualChipProps) {
+  return (
+    <span className="inline-flex flex-col rounded-lg border border-card-border bg-card px-3 py-2 transition-colors hover:border-accent-muted">
+      <span className="font-thai text-sm font-medium text-foreground">{th}</span>
+      <span className="text-[0.6875rem] text-muted">{en}</span>
+    </span>
+  );
+}
+
 interface BilingualValueProps {
   th: string;
   en: string;

@@ -23,8 +23,8 @@ export function About({ th, en, skills }: AboutProps) {
         </AnimateIn>
 
         <AnimateIn delay={100}>
-          <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
-            <div className="space-y-6">
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
+            <div className="max-w-prose space-y-5">
               {th.about.paragraphs.map((paragraph, index) => (
                 <BilingualText
                   key={paragraph}
@@ -34,35 +34,37 @@ export function About({ th, en, skills }: AboutProps) {
               ))}
             </div>
 
-            <div>
-              <BilingualTitle
-                th={th.about.skillsHeading}
-                en={en.about.skillsHeading}
-                as="h3"
-                size="small"
-                className="mb-5"
-              />
-              <div className="flex flex-wrap gap-2.5">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-lg border border-card-border bg-card px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent-muted hover:text-accent"
-                  >
-                    {skill}
-                  </span>
-                ))}
+            <div className="space-y-6">
+              <div className="rounded-2xl border border-card-border bg-card p-6">
+                <BilingualTitle
+                  th={th.about.skillsHeading}
+                  en={en.about.skillsHeading}
+                  as="h3"
+                  size="small"
+                  className="mb-4"
+                />
+                <div className="flex flex-wrap gap-2">
+                  {skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-md border border-card-border bg-background px-3 py-1.5 text-xs font-medium text-foreground"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              <div className="mt-10 rounded-2xl border border-card-border bg-card p-7">
+              <div className="rounded-2xl border border-card-border bg-card p-6">
                 <BilingualTitle
                   th={th.about.positionHeading}
                   en={en.about.positionHeading}
                   as="h3"
                   size="small"
-                  className="mb-5"
+                  className="mb-4"
                 />
-                <dl className="space-y-4 text-sm">
-                  <div className="flex justify-between border-b border-card-border pb-4">
+                <dl className="space-y-3 text-sm">
+                  <div className="flex justify-between gap-4 border-b border-card-border pb-3">
                     <BilingualLabel
                       th={th.about.positionLabels.role}
                       en={en.about.positionLabels.role}
@@ -70,10 +72,10 @@ export function About({ th, en, skills }: AboutProps) {
                     <BilingualValue
                       th={th.title}
                       en={en.title}
-                      className="max-w-[55%] text-right"
+                      className="text-right"
                     />
                   </div>
-                  <div className="flex justify-between border-b border-card-border pb-4">
+                  <div className="flex justify-between gap-4 border-b border-card-border pb-3">
                     <BilingualLabel
                       th={th.about.positionLabels.institution}
                       en={en.about.positionLabels.institution}
@@ -84,7 +86,7 @@ export function About({ th, en, skills }: AboutProps) {
                       className="max-w-[55%] text-right"
                     />
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between gap-4">
                     <BilingualLabel
                       th={th.about.positionLabels.location}
                       en={en.about.positionLabels.location}

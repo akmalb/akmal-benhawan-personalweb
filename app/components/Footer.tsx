@@ -1,5 +1,4 @@
 import type { Profile } from "@/src/data/profile";
-import { BilingualValue } from "./Locale";
 
 interface FooterProps {
   profile: Profile;
@@ -15,20 +14,19 @@ const icons: Record<string, React.ReactNode> = {
 };
 
 export function Footer({ profile }: FooterProps) {
-  const { th, en, socialLinks } = profile;
+  const { en, socialLinks } = profile;
   const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-card-border bg-card">
-      <div className="container-width section-padding !py-12">
-        <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between">
+      <div className="container-width section-padding !py-8">
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="text-center sm:text-left">
-            <BilingualValue th={th.name} en={en.name} />
-            <BilingualValue
-              th={th.institution}
-              en={en.institution}
-              className="mt-2"
-            />
+            <p className="font-semibold text-foreground">{en.footer.line1}</p>
+            <p className="mt-1 text-sm text-muted">{en.footer.line2}</p>
+            <p className="mt-3 text-xs text-muted">
+              &copy; {year} {en.footer.line1}. {en.footer.copyright}
+            </p>
           </div>
 
           <div className="flex items-center gap-3">
@@ -39,7 +37,7 @@ export function Footer({ profile }: FooterProps) {
                 target={link.icon === "email" ? undefined : "_blank"}
                 rel={link.icon === "email" ? undefined : "noopener noreferrer"}
                 aria-label={link.name}
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-card-border bg-background text-muted transition-all hover:border-accent hover:text-accent"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-card-border bg-background text-muted transition-all hover:border-accent hover:text-accent"
               >
                 {link.icon === "email" ? (
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -53,15 +51,6 @@ export function Footer({ profile }: FooterProps) {
               </a>
             ))}
           </div>
-        </div>
-
-        <div className="mt-8 border-t border-card-border pt-8 text-center">
-          <p className="font-thai text-sm text-muted">
-            &copy; {year} {th.name} — {th.footer.rights}
-          </p>
-          <p className="mt-1 text-xs text-muted">
-            &copy; {year} {en.name} — {en.footer.rights}
-          </p>
         </div>
       </div>
     </footer>
