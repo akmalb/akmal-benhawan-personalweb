@@ -1,55 +1,76 @@
-import type { CommunityWork } from "@/src/data/community";
-import type { Bilingual } from "@/src/data/types";
-import { BilingualBody, BilingualHeading } from "./Bilingual";
+import type { Community } from "@/src/data/community";
 import { AnimateIn } from "./AnimateIn";
-import { SectionHeading } from "./SectionHeading";
+import { BodyText, CardHeading, EnglishBlock, LocaleDivider, SectionHeading, ThaiBlock } from "./Locale";
 
 interface CommunityProps {
-  section: {
-    label: Bilingual;
-    title: Bilingual;
-    description: Bilingual;
-  };
-  work: CommunityWork;
+  community: Community;
 }
 
-export function Community({ section, work }: CommunityProps) {
+export function Community({ community }: CommunityProps) {
+  const { th, en } = community;
+
   return (
     <section id="community" className="scroll-mt-28 section-padding">
       <div className="container-width">
         <AnimateIn>
-          <SectionHeading
-            label={section.label}
-            title={section.title}
-            description={section.description}
-          />
+          <SectionHeading th={th.section} en={en.section} />
         </AnimateIn>
 
         <AnimateIn delay={100}>
           <article className="rounded-2xl border border-card-border bg-card p-8 sm:p-10">
-            <BilingualHeading text={work.organization} as="h3" size="card" />
-            <BilingualBody text={work.role} className="mt-2 text-accent" />
-            <BilingualBody text={work.description} className="mt-6 max-w-3xl" />
+            <ThaiBlock>
+              <CardHeading thai as="h3">
+                {th.work.organization}
+              </CardHeading>
+              <p className="mt-2 font-thai text-lg font-semibold text-accent">{th.work.role}</p>
+              <BodyText thai className="mt-6 max-w-3xl">
+                {th.work.description}
+              </BodyText>
 
-            <div className="mt-8 border-t border-card-border pt-8">
-              <BilingualHeading
-                text={work.contributionsHeading}
-                as="h4"
-                size="small"
-                className="mb-5"
-              />
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {work.highlights.map((item) => (
-                  <li
-                    key={item.en}
-                    className="flex items-start gap-3 rounded-lg border border-card-border bg-background px-4 py-3"
-                  >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <BilingualBody text={item} />
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <div className="mt-8 border-t border-card-border pt-8">
+                <CardHeading thai as="h4" className="mb-5 text-lg sm:text-xl">
+                  {th.work.contributionsHeading}
+                </CardHeading>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {th.work.highlights.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 rounded-lg border border-card-border bg-background px-4 py-3"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      <BodyText thai>{item}</BodyText>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ThaiBlock>
+
+            <LocaleDivider />
+
+            <EnglishBlock>
+              <CardHeading as="h3">{en.work.organization}</CardHeading>
+              <p className="mt-2 text-lg font-semibold text-accent">{en.work.role}</p>
+              <BodyText muted className="mt-6 max-w-3xl">
+                {en.work.description}
+              </BodyText>
+
+              <div className="mt-8 border-t border-card-border pt-8">
+                <CardHeading as="h4" className="mb-5 text-lg sm:text-xl">
+                  {en.work.contributionsHeading}
+                </CardHeading>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {en.work.highlights.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 rounded-lg border border-card-border bg-background px-4 py-3"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      <BodyText muted>{item}</BodyText>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </EnglishBlock>
           </article>
         </AnimateIn>
       </div>

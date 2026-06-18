@@ -1,20 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Bilingual } from "@/src/data/types";
-import { BilingualNav } from "./Bilingual";
+import type { Profile } from "@/src/data/profile";
 import { ThemeToggle } from "./ThemeToggle";
 
-interface NavLink {
-  href: string;
-  label: Bilingual;
-}
-
 interface NavbarProps {
-  navLinks: NavLink[];
+  navLinks: Profile["navLinks"];
+  siteName: string;
 }
 
-export function Navbar({ navLinks }: NavbarProps) {
+export function Navbar({ navLinks, siteName }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -35,20 +30,19 @@ export function Navbar({ navLinks }: NavbarProps) {
       <nav className="container-width flex items-center justify-between py-4">
         <a
           href="#home"
-          className="font-thai text-base font-bold text-foreground transition-colors hover:text-accent sm:text-lg"
+          className="text-base font-bold text-foreground transition-colors hover:text-accent sm:text-lg"
         >
-          อักมาล เบนหวัน
-          <span className="ml-1.5 text-xs font-normal text-muted">(Akmal Benhawan)</span>
+          {siteName}
         </a>
 
-        <div className="hidden items-center gap-0.5 lg:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md px-2.5 py-2 transition-colors hover:text-accent"
+              className="rounded-md px-3 py-2 text-sm font-medium text-foreground transition-colors hover:text-accent"
             >
-              <BilingualNav text={link.label} />
+              {link.label}
             </a>
           ))}
           <div className="ml-2 border-l border-card-border pl-2">
@@ -82,9 +76,9 @@ export function Navbar({ navLinks }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="rounded-md px-3 py-2.5 transition-colors hover:bg-accent-light"
+                className="rounded-md px-3 py-2.5 text-sm font-medium transition-colors hover:bg-accent-light"
               >
-                <BilingualNav text={link.label} />
+                {link.label}
               </a>
             ))}
           </div>

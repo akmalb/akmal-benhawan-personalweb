@@ -1,32 +1,49 @@
-import type { Bilingual } from "@/src/data/types";
+import type { Profile } from "@/src/data/profile";
 import { AnimateIn } from "./AnimateIn";
+import { EnglishBlock, LocaleDivider, ThaiBlock } from "./Locale";
 
 interface RolesProps {
-  roles: Bilingual[];
+  th: Profile["th"];
+  en: Profile["en"];
 }
 
-export function Roles({ roles }: RolesProps) {
+export function Roles({ th, en }: RolesProps) {
   return (
     <section className="border-y border-card-border bg-section-alt">
       <div className="container-width section-padding !py-12 sm:!py-14">
         <AnimateIn>
-          <p className="mb-8 text-center font-thai text-sm font-bold text-accent-muted">
-            บทบาทและความรับผิดชอบหลัก{" "}
-            <span className="font-normal text-muted">(Primary Roles)</span>
-          </p>
+          <ThaiBlock>
+            <p className="mb-8 text-center text-sm font-bold text-accent-muted">{th.rolesHeading}</p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {th.primaryRoles.map((role, index) => (
+                <div
+                  key={role}
+                  className="rounded-xl border border-card-border bg-card px-5 py-4 text-center transition-colors hover:border-accent-muted"
+                >
+                  <p className="text-[0.9375rem] font-semibold leading-snug text-foreground">{role}</p>
+                </div>
+              ))}
+            </div>
+          </ThaiBlock>
         </AnimateIn>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {roles.map((role, index) => (
-            <AnimateIn key={role.th} delay={index * 80}>
-              <div className="rounded-xl border border-card-border bg-card px-5 py-4 text-center transition-colors hover:border-accent-muted">
-                <p className="font-thai text-[0.9375rem] font-semibold leading-snug text-foreground">
-                  {role.th}
-                </p>
-                <p className="mt-1.5 text-xs leading-snug text-muted">({role.en})</p>
-              </div>
-            </AnimateIn>
-          ))}
-        </div>
+
+        <LocaleDivider />
+
+        <AnimateIn delay={100}>
+          <EnglishBlock>
+            <p className="mb-8 text-center text-sm font-bold text-accent-muted">{en.rolesHeading}</p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {en.primaryRoles.map((role) => (
+                <div
+                  key={role}
+                  className="rounded-xl border border-card-border bg-card px-5 py-4 text-center transition-colors hover:border-accent-muted"
+                >
+                  <p className="text-[0.9375rem] font-semibold leading-snug text-foreground">{role}</p>
+                </div>
+              ))}
+            </div>
+          </EnglishBlock>
+        </AnimateIn>
       </div>
     </section>
   );

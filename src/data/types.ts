@@ -1,4 +1,5 @@
-export type Bilingual = {
-  th: string;
-  en: string;
+export type SectionContent = {
+  label: string;
+  title: string;
+  description: string;
 };

@@ -1,8 +1,6 @@
-import type { ResearchInterest } from "@/src/data/research";
-import type { Bilingual } from "@/src/data/types";
-import { BilingualBody, BilingualHeading } from "./Bilingual";
+import type { Research } from "@/src/data/research";
 import { AnimateIn } from "./AnimateIn";
-import { SectionHeading } from "./SectionHeading";
+import { BodyText, CardHeading, EnglishBlock, LocaleDivider, SectionHeading, ThaiBlock } from "./Locale";
 
 const icons: Record<string, React.ReactNode> = {
   brain: (
@@ -29,41 +27,70 @@ const icons: Record<string, React.ReactNode> = {
 };
 
 interface ResearchProps {
-  section: {
-    label: Bilingual;
-    title: Bilingual;
-    description: Bilingual;
-  };
-  interests: ResearchInterest[];
+  research: Research;
 }
 
-export function Research({ section, interests }: ResearchProps) {
+export function Research({ research }: ResearchProps) {
+  const { th, en, interestIcons } = research;
+
   return (
     <section id="research" className="scroll-mt-28 bg-section-alt section-padding">
       <div className="container-width">
         <AnimateIn>
-          <SectionHeading
-            label={section.label}
-            title={section.title}
-            description={section.description}
-          />
+          <SectionHeading th={th.section} en={en.section} />
         </AnimateIn>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {interests.map((item, index) => (
-            <AnimateIn key={item.title.en} delay={index * 60}>
-              <article className="group h-full rounded-2xl border border-card-border bg-card p-7 transition-all duration-300 hover:border-accent-muted hover:shadow-lg">
+        <AnimateIn delay={100}>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {th.interests.map((item, index) => (
+              <article
+                key={item.title}
+                className="group h-full rounded-2xl border border-card-border bg-card p-7 transition-all duration-300 hover:border-accent-muted hover:shadow-lg"
+              >
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-light text-accent transition-colors group-hover:bg-accent group-hover:text-white">
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    {icons[item.icon]}
+                    {icons[interestIcons[index]]}
                   </svg>
                 </div>
-                <BilingualHeading text={item.title} as="h3" size="small" />
-                <BilingualBody text={item.description} className="mt-4" />
+                <ThaiBlock>
+                  <CardHeading thai as="h3" className="text-lg sm:text-xl">
+                    {item.title}
+                  </CardHeading>
+                  <BodyText thai className="mt-4">
+                    {item.description}
+                  </BodyText>
+                </ThaiBlock>
               </article>
-            </AnimateIn>
-          ))}
-        </div>
+            ))}
+          </div>
+        </AnimateIn>
+
+        <LocaleDivider />
+
+        <AnimateIn delay={150}>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {en.interests.map((item, index) => (
+              <article
+                key={item.title}
+                className="group h-full rounded-2xl border border-card-border bg-card p-7 transition-all duration-300 hover:border-accent-muted hover:shadow-lg"
+              >
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-light text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    {icons[interestIcons[index]]}
+                  </svg>
+                </div>
+                <EnglishBlock>
+                  <CardHeading as="h3" className="text-lg sm:text-xl">
+                    {item.title}
+                  </CardHeading>
+                  <BodyText muted className="mt-4">
+                    {item.description}
+                  </BodyText>
+                </EnglishBlock>
+              </article>
+            ))}
+          </div>
+        </AnimateIn>
       </div>
     </section>
   );
