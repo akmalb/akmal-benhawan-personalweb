@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#080d17"/>
+  <rect x="24" y="24" width="752" height="452" rx="12" fill="#0f1623" stroke="#1c2a3f"/>
+  <text x="48" y="64" font-family="system-ui" font-size="16" font-weight="700" fill="#6ba3e0">YRU Big Data</text>
+  <text x="48" y="88" font-family="system-ui" font-size="12" fill="#8b9cb3">Institutional Data Warehouse</text>
+  <rect x="48" y="112" width="704" height="80" rx="8" fill="#142238"/>
+  <rect x="68" y="132" width="120" height="40" rx="6" fill="#1e3a5f"/>
+  <rect x="204" y="132" width="120" height="40" rx="6" fill="#1e3a5f"/>
+  <rect x="340" y="132" width="120" height="40" rx="6" fill="#3d6ba8"/>
+  <rect x="476" y="132" width="120" height="40" rx="6" fill="#1e3a5f"/>
+  <rect x="612" y="132" width="120" height="40" rx="6" fill="#1e3a5f"/>
+  <rect x="48" y="212" width="340" height="240" rx="8" fill="#142238"/>
+  <rect x="68" y="240" width="300" height="12" rx="3" fill="#1c2a3f"/>
+  <rect x="68" y="264" width="260" height="12" rx="3" fill="#1c2a3f"/>
+  <rect x="68" y="288" width="280" height="12" rx="3" fill="#1c2a3f"/>
+  <rect x="68" y="312" width="220" height="12" rx="3" fill="#3d6ba8"/>
+  <rect x="68" y="336" width="240" height="12" rx="3" fill="#1c2a3f"/>
+  <rect x="412" y="212" width="340" height="240" rx="8" fill="#142238"/>
+  <rect x="432" y="340" width="40" height="88" rx="4" fill="#1e3a5f"/>
+  <rect x="484" y="300" width="40" height="128" rx="4" fill="#3d6ba8"/>
+  <rect x="536" y="320" width="40" height="108" rx="4" fill="#1e3a5f"/>
+  <rect x="588" y="260" width="40" height="168" rx="4" fill="#4a8fd4"/>
+  <rect x="640" y="280" width="40" height="148" rx="4" fill="#1e3a5f"/>
+  <rect x="692" y="240" width="40" height="188" rx="4" fill="#3d6ba8"/>
+</svg>

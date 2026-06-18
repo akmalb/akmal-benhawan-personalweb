@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#0f1623"/>
+  <rect x="0" y="0" width="800" height="48" fill="#1a3a6b"/>
+  <circle cx="24" cy="24" r="8" fill="#ef4444"/><circle cx="48" cy="24" r="8" fill="#f59e0b"/><circle cx="72" cy="24" r="8" fill="#22c55e"/>
+  <text x="400" y="32" text-anchor="middle" font-family="system-ui" font-size="14" fill="#94a3b8">YRU Track  Academic Performance Dashboard</text>
+  <rect x="24" y="72" width="180" height="404" rx="8" fill="#111827" stroke="#1e293b"/>
+  <rect x="40" y="96" width="120" height="12" rx="4" fill="#1e3a5f"/>
+  <rect x="40" y="124" width="148" height="8" rx="3" fill="#1e293b"/>
+  <rect x="40" y="148" width="148" height="8" rx="3" fill="#1e293b"/>
+  <rect x="40" y="172" width="100" height="8" rx="3" fill="#3d6ba8"/>
+  <rect x="220" y="72" width="556" height="180" rx="8" fill="#111827" stroke="#1e293b"/>
+  <polyline points="260,220 320,160 380,180 440,120 500,140 560,90 620,110 680,70 740,100" stroke="#4a8fd4" stroke-width="3" fill="none"/>
+  <rect x="220" y="272" width="268" height="204" rx="8" fill="#111827" stroke="#1e293b"/>
+  <rect x="240" y="300" width="80" height="140" rx="4" fill="#1e3a5f"/>
+  <rect x="334" y="340" width="80" height="100" rx="4" fill="#3d6ba8"/>
+  <rect x="428" y="320" width="40" height="120" rx="4" fill="#1e3a5f"/>
+  <rect x="508" y="272" width="268" height="204" rx="8" fill="#111827" stroke="#1e293b"/>
+  <circle cx="642" cy="374" r="70" stroke="#4a8fd4" stroke-width="24" fill="none" stroke-dasharray="280 440" transform="rotate(-90 642 374)"/>
+</svg>
