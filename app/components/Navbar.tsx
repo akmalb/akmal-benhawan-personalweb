@@ -18,11 +18,11 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-card-border bg-card/90 shadow-sm backdrop-blur-md"
+          ? "border-b border-card-border bg-card/95 shadow-sm backdrop-blur-lg"
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <nav className="container-width flex items-center justify-between py-4">
         <a
           href="#home"
           className="font-serif text-lg font-bold text-foreground transition-colors hover:text-accent"

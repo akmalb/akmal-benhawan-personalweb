@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#0b1120"/>
+  <rect x="0" y="0" width="800" height="500" fill="url(#bg)"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500">
+      <stop offset="0%" stop-color="#0f1623"/>
+      <stop offset="100%" stop-color="#142238"/>
+    </linearGradient>
+  </defs>
+  <text x="400" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="700" fill="#edf1f7">YRU Joins</text>
+  <text x="400" y="76" text-anchor="middle" font-family="system-ui" font-size="13" fill="#8b9cb3">Community Engagement Platform</text>
+  <circle cx="400" cy="260" r="100" fill="#1e3a5f" stroke="#4a8fd4" stroke-width="2"/>
+  <circle cx="400" cy="260" r="40" fill="#3d6ba8"/>
+  <circle cx="220" cy="180" r="36" fill="#1e293b" stroke="#4a8fd4"/>
+  <circle cx="580" cy="180" r="36" fill="#1e293b" stroke="#4a8fd4"/>
+  <circle cx="200" cy="340" r="36" fill="#1e293b" stroke="#4a8fd4"/>
+  <circle cx="600" cy="340" r="36" fill="#1e293b" stroke="#4a8fd4"/>
+  <line x1="400" y1="260" x2="240" y2="190" stroke="#4a8fd4" stroke-width="2" opacity="0.5"/>
+  <line x1="400" y1="260" x2="560" y2="190" stroke="#4a8fd4" stroke-width="2" opacity="0.5"/>
+  <line x1="400" y1="260" x2="220" y2="330" stroke="#4a8fd4" stroke-width="2" opacity="0.5"/>
+  <line x1="400" y1="260" x2="580" y2="330" stroke="#4a8fd4" stroke-width="2" opacity="0.5"/>
+</svg>

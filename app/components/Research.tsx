@@ -1,4 +1,5 @@
 import { researchInterests } from "../data/portfolio";
+import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
 
 const icons: Record<string, React.ReactNode> = {
@@ -27,28 +28,29 @@ const icons: Record<string, React.ReactNode> = {
 
 export function Research() {
   return (
-    <section id="research" className="scroll-mt-24 px-6 py-20">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          label="Research"
-          title="Research Interests"
-          description="Exploring interdisciplinary approaches that connect technology with social and institutional research."
-        />
+    <section id="research" className="scroll-mt-28 bg-section-alt section-padding">
+      <div className="container-width">
+        <AnimateIn>
+          <SectionHeading
+            label="Research Areas"
+            title="Research Interests"
+            description="Exploring interdisciplinary approaches that connect technology with social and institutional research."
+          />
+        </AnimateIn>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {researchInterests.map((item) => (
-            <article
-              key={item.title}
-              className="group rounded-xl border border-card-border bg-card p-6 shadow-sm transition-all hover:border-accent hover:shadow-md"
-            >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent-light text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  {icons[item.icon]}
-                </svg>
-              </div>
-              <h3 className="font-serif text-lg font-semibold text-foreground">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
-            </article>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {researchInterests.map((item, index) => (
+            <AnimateIn key={item.title} delay={index * 60}>
+              <article className="group h-full rounded-2xl border border-card-border bg-card p-7 transition-all duration-300 hover:border-accent-muted hover:shadow-lg">
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-light text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    {icons[item.icon]}
+                  </svg>
+                </div>
+                <h3 className="font-serif text-lg font-semibold text-foreground">{item.title}</h3>
+                <p className="prose-academic mt-3 text-[0.9375rem]">{item.description}</p>
+              </article>
+            </AnimateIn>
           ))}
         </div>
       </div>

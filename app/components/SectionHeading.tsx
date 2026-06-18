@@ -1,23 +1,22 @@
 interface SectionHeadingProps {
-  id?: string;
   label: string;
   title: string;
   description?: string;
 }
 
-export function SectionHeading({ id, label, title, description }: SectionHeadingProps) {
+export function SectionHeading({ label, title, description }: SectionHeadingProps) {
   return (
-    <div id={id} className="mb-12 scroll-mt-24">
-      <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">
+    <div className="mb-14">
+      <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent-muted">
         {label}
       </p>
-      <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+      <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 max-w-2xl text-lg text-muted">{description}</p>
+        <p className="prose-academic mt-5 max-w-2xl text-lg">{description}</p>
       )}
-      <div className="mt-6 h-1 w-16 rounded-full bg-accent" />
+      <div className="mt-7 h-0.5 w-20 rounded-full bg-accent" />
     </div>
   );
 }
