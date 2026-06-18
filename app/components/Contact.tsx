@@ -1,12 +1,11 @@
 import type { Profile } from "@/src/data/profile";
 import { AnimateIn } from "./AnimateIn";
 import {
-  BodyText,
-  CardHeading,
-  EnglishBlock,
-  LocaleDivider,
+  BilingualLabel,
+  BilingualText,
+  BilingualTitle,
+  BilingualValue,
   SectionHeading,
-  ThaiBlock,
 } from "./Locale";
 
 interface ContactProps {
@@ -14,28 +13,30 @@ interface ContactProps {
 }
 
 function ContactInfoCard({
-  content,
+  contentTh,
+  contentEn,
   email,
-  institution,
-  location,
-  thai,
+  institutionTh,
+  institutionEn,
+  locationTh,
+  locationEn,
 }: {
-  content: Profile["th"]["contact"];
+  contentTh: Profile["th"]["contact"];
+  contentEn: Profile["en"]["contact"];
   email: string;
-  institution: string;
-  location: string;
-  thai: boolean;
+  institutionTh: string;
+  institutionEn: string;
+  locationTh: string;
+  locationEn: string;
 }) {
-  const labelClass = thai ? "font-thai text-sm text-muted" : "text-sm text-muted";
-  const valueClass = thai
-    ? "font-thai font-medium text-foreground"
-    : "font-medium text-foreground";
-
   return (
     <div className="h-full rounded-2xl border border-card-border bg-card p-8 sm:p-10">
-      <CardHeading thai={thai} as="h3" className="text-lg sm:text-xl">
-        {content.infoHeading}
-      </CardHeading>
+      <BilingualTitle
+        th={contentTh.infoHeading}
+        en={contentEn.infoHeading}
+        as="h3"
+        size="small"
+      />
       <dl className="mt-8 space-y-6">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-light text-accent">
@@ -44,15 +45,15 @@ function ContactInfoCard({
             </svg>
           </div>
           <div>
-            <dt className={labelClass}>{content.labels.email}</dt>
-            <dd className="mt-1">
+            <BilingualLabel th={contentTh.labels.email} en={contentEn.labels.email} />
+            <div className="mt-1">
               <a
                 href={`mailto:${email}`}
                 className="font-medium text-foreground transition-colors hover:text-accent"
               >
                 {email}
               </a>
-            </dd>
+            </div>
           </div>
         </div>
 
@@ -63,8 +64,12 @@ function ContactInfoCard({
             </svg>
           </div>
           <div>
-            <dt className={labelClass}>{content.labels.institution}</dt>
-            <dd className={`mt-1 ${valueClass}`}>{institution}</dd>
+            <BilingualLabel th={contentTh.labels.institution} en={contentEn.labels.institution} />
+            <BilingualValue
+              th={institutionTh}
+              en={institutionEn}
+              className="mt-1"
+            />
           </div>
         </div>
 
@@ -76,8 +81,8 @@ function ContactInfoCard({
             </svg>
           </div>
           <div>
-            <dt className={labelClass}>{content.labels.location}</dt>
-            <dd className={`mt-1 ${valueClass}`}>{location}</dd>
+            <BilingualLabel th={contentTh.labels.location} en={contentEn.labels.location} />
+            <BilingualValue th={locationTh} en={locationEn} className="mt-1" />
           </div>
         </div>
       </dl>
@@ -86,40 +91,46 @@ function ContactInfoCard({
 }
 
 function CollaborateCard({
-  content,
+  contentTh,
+  contentEn,
   email,
   cvUrl,
-  thai,
 }: {
-  content: Profile["th"]["contact"];
+  contentTh: Profile["th"]["contact"];
+  contentEn: Profile["en"]["contact"];
   email: string;
   cvUrl: string;
-  thai: boolean;
 }) {
   return (
     <div className="flex h-full flex-col justify-center rounded-2xl border border-accent/20 bg-accent p-8 text-white sm:p-10">
-      <CardHeading thai={thai} as="h3" className="text-white">
-        {content.collaborateHeading}
-      </CardHeading>
-      <BodyText thai={thai} className={`mt-5 ${thai ? "text-blue-50" : "text-blue-100/90"}`}>
-        {content.collaborateText}
-      </BodyText>
+      <BilingualTitle
+        th={contentTh.collaborateHeading}
+        en={contentEn.collaborateHeading}
+        as="h3"
+        size="card"
+        inverted
+      />
+      <BilingualText
+        th={contentTh.collaborateText}
+        en={contentEn.collaborateText}
+        inverted
+        className="mt-5"
+      />
       <div className="mt-8 flex flex-wrap gap-3">
         <a
           href={`mailto:${email}`}
-          className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-accent transition-all hover:bg-blue-50"
+          className="inline-flex flex-col items-start rounded-lg bg-white px-5 py-3 text-accent transition-all hover:bg-blue-50"
         >
-          {content.sendEmail}
-          <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
+          <span className="font-thai text-sm font-semibold">{contentTh.sendEmail}</span>
+          <span className="text-[0.6875rem] font-normal text-accent/70">{contentEn.sendEmail}</span>
         </a>
         <a
           href={cvUrl}
           download
-          className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-sm font-semibold transition-all hover:bg-white/10"
+          className="inline-flex flex-col items-start rounded-lg border border-white/30 px-5 py-3 transition-all hover:bg-white/10"
         >
-          {content.downloadCv}
+          <span className="font-thai text-sm font-semibold">{contentTh.downloadCv}</span>
+          <span className="text-[0.6875rem] font-normal text-blue-100/90">{contentEn.downloadCv}</span>
         </a>
       </div>
     </div>
@@ -137,35 +148,23 @@ export function Contact({ profile }: ContactProps) {
         </AnimateIn>
 
         <AnimateIn delay={100}>
-          <ThaiBlock>
-            <div className="grid gap-8 lg:grid-cols-2">
-              <ContactInfoCard
-                content={th.contact}
-                email={email}
-                institution={th.institution}
-                location={th.location}
-                thai
-              />
-              <CollaborateCard content={th.contact} email={email} cvUrl={cvUrl} thai />
-            </div>
-          </ThaiBlock>
-        </AnimateIn>
-
-        <LocaleDivider />
-
-        <AnimateIn delay={150}>
-          <EnglishBlock>
-            <div className="grid gap-8 lg:grid-cols-2">
-              <ContactInfoCard
-                content={en.contact}
-                email={email}
-                institution={en.institution}
-                location={en.location}
-                thai={false}
-              />
-              <CollaborateCard content={en.contact} email={email} cvUrl={cvUrl} thai={false} />
-            </div>
-          </EnglishBlock>
+          <div className="grid gap-8 lg:grid-cols-2">
+            <ContactInfoCard
+              contentTh={th.contact}
+              contentEn={en.contact}
+              email={email}
+              institutionTh={th.institution}
+              institutionEn={en.institution}
+              locationTh={th.location}
+              locationEn={en.location}
+            />
+            <CollaborateCard
+              contentTh={th.contact}
+              contentEn={en.contact}
+              email={email}
+              cvUrl={cvUrl}
+            />
+          </div>
         </AnimateIn>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Projects } from "@/src/data/projects";
 import { AnimateIn } from "./AnimateIn";
-import { BodyText, EnglishBlock, LocaleDivider, SectionHeading, ThaiBlock } from "./Locale";
+import { BilingualText, SectionHeading } from "./Locale";
 
 interface ProjectsProps {
   projects: Projects;
@@ -32,40 +32,31 @@ export function Projects({ projects }: ProjectsProps) {
                 </div>
                 <div className="flex flex-1 flex-col p-7 sm:p-8">
                   <h3 className="text-xl font-bold text-foreground">{project.name}</h3>
-
-                  <ThaiBlock className="mt-4 flex-1">
-                    <BodyText thai>{th.items[index].description}</BodyText>
-                    {th.items[index].tags.length > 0 && (
-                      <div className="mt-6 flex flex-wrap gap-2 border-t border-card-border pt-6">
-                        {th.items[index].tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-md border border-card-border bg-background px-3 py-1 text-xs font-medium text-muted"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </ThaiBlock>
-
-                  <LocaleDivider className="my-6" />
-
-                  <EnglishBlock className="flex-1">
-                    <BodyText muted>{en.items[index].description}</BodyText>
-                    {en.items[index].tags.length > 0 && (
-                      <div className="mt-6 flex flex-wrap gap-2 border-t border-card-border pt-6">
-                        {en.items[index].tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-md border border-card-border bg-background px-3 py-1 text-xs font-medium text-muted"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </EnglishBlock>
+                  <BilingualText
+                    th={th.items[index].description}
+                    en={en.items[index].description}
+                    className="mt-4 flex-1"
+                  />
+                  {(th.items[index].tags.length > 0 || en.items[index].tags.length > 0) && (
+                    <div className="mt-6 flex flex-wrap gap-2 border-t border-card-border pt-6">
+                      {th.items[index].tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md border border-card-border bg-background px-3 py-1 text-xs font-medium text-muted"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {en.items[index].tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md border border-card-border bg-background px-3 py-1 text-xs font-medium text-muted"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </article>
             </AnimateIn>

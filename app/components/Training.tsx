@@ -1,6 +1,6 @@
 import type { Training } from "@/src/data/training";
 import { AnimateIn } from "./AnimateIn";
-import { BodyText, CardHeading, EnglishBlock, LocaleDivider, SectionHeading, ThaiBlock } from "./Locale";
+import { BilingualText, BilingualTitle, SectionHeading } from "./Locale";
 
 interface TrainingProps {
   training: Training;
@@ -23,25 +23,17 @@ export function Training({ training }: TrainingProps) {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent-light font-mono text-sm font-bold text-accent transition-colors group-hover:bg-accent group-hover:text-white">
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <ThaiBlock>
-                  <CardHeading thai as="h3" className="text-lg sm:text-xl">
-                    {topic.title}
-                  </CardHeading>
-                  <BodyText thai className="mt-4">
-                    {topic.description}
-                  </BodyText>
-                </ThaiBlock>
-
-                <LocaleDivider className="my-6" />
-
-                <EnglishBlock>
-                  <CardHeading as="h3" className="text-lg sm:text-xl">
-                    {en.topics[index].title}
-                  </CardHeading>
-                  <BodyText muted className="mt-4">
-                    {en.topics[index].description}
-                  </BodyText>
-                </EnglishBlock>
+                <BilingualTitle
+                  th={topic.title}
+                  en={en.topics[index].title}
+                  as="h3"
+                  size="small"
+                />
+                <BilingualText
+                  th={topic.description}
+                  en={en.topics[index].description}
+                  className="mt-4"
+                />
               </article>
             </AnimateIn>
           ))}

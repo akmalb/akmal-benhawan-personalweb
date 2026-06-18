@@ -1,5 +1,5 @@
 import type { Profile } from "@/src/data/profile";
-import { EnglishBlock, LocaleDivider, ThaiBlock } from "./Locale";
+import { BilingualValue } from "./Locale";
 
 interface FooterProps {
   profile: Profile;
@@ -22,10 +22,14 @@ export function Footer({ profile }: FooterProps) {
     <footer className="border-t border-card-border bg-card">
       <div className="container-width section-padding !py-12">
         <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between">
-          <ThaiBlock className="text-center sm:text-left">
-            <p className="text-lg font-bold text-foreground">{th.name}</p>
-            <p className="mt-1 font-thai text-sm text-muted">{th.institution}</p>
-          </ThaiBlock>
+          <div className="text-center sm:text-left">
+            <BilingualValue th={th.name} en={en.name} />
+            <BilingualValue
+              th={th.institution}
+              en={en.institution}
+              className="mt-2"
+            />
+          </div>
 
           <div className="flex items-center gap-3">
             {socialLinks.map((link) => (
@@ -51,28 +55,13 @@ export function Footer({ profile }: FooterProps) {
           </div>
         </div>
 
-        <LocaleDivider className="my-8" />
-
-        <EnglishBlock>
-          <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between">
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-bold text-foreground">{en.name}</p>
-              <p className="mt-1 text-sm text-muted">{en.institution}</p>
-            </div>
-          </div>
-        </EnglishBlock>
-
         <div className="mt-8 border-t border-card-border pt-8 text-center">
-          <ThaiBlock>
-            <p className="text-sm text-muted">
-              &copy; {year} {th.name} — {th.footer.rights}
-            </p>
-          </ThaiBlock>
-          <EnglishBlock>
-            <p className="mt-2 text-sm text-muted">
-              &copy; {year} {en.name} — {en.footer.rights}
-            </p>
-          </EnglishBlock>
+          <p className="font-thai text-sm text-muted">
+            &copy; {year} {th.name} — {th.footer.rights}
+          </p>
+          <p className="mt-1 text-xs text-muted">
+            &copy; {year} {en.name} — {en.footer.rights}
+          </p>
         </div>
       </div>
     </footer>

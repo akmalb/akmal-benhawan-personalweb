@@ -1,6 +1,6 @@
 import type { Research } from "@/src/data/research";
 import { AnimateIn } from "./AnimateIn";
-import { BodyText, CardHeading, EnglishBlock, LocaleDivider, SectionHeading, ThaiBlock } from "./Locale";
+import { BilingualText, BilingualTitle, SectionHeading } from "./Locale";
 
 const icons: Record<string, React.ReactNode> = {
   brain: (
@@ -40,57 +40,30 @@ export function Research({ research }: ResearchProps) {
           <SectionHeading th={th.section} en={en.section} />
         </AnimateIn>
 
-        <AnimateIn delay={100}>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {th.interests.map((item, index) => (
-              <article
-                key={item.title}
-                className="group h-full rounded-2xl border border-card-border bg-card p-7 transition-all duration-300 hover:border-accent-muted hover:shadow-lg"
-              >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {th.interests.map((item, index) => (
+            <AnimateIn key={item.title} delay={index * 60}>
+              <article className="group h-full rounded-2xl border border-card-border bg-card p-7 transition-all duration-300 hover:border-accent-muted hover:shadow-lg">
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-light text-accent transition-colors group-hover:bg-accent group-hover:text-white">
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     {icons[interestIcons[index]]}
                   </svg>
                 </div>
-                <ThaiBlock>
-                  <CardHeading thai as="h3" className="text-lg sm:text-xl">
-                    {item.title}
-                  </CardHeading>
-                  <BodyText thai className="mt-4">
-                    {item.description}
-                  </BodyText>
-                </ThaiBlock>
+                <BilingualTitle
+                  th={item.title}
+                  en={en.interests[index].title}
+                  as="h3"
+                  size="small"
+                />
+                <BilingualText
+                  th={item.description}
+                  en={en.interests[index].description}
+                  className="mt-4"
+                />
               </article>
-            ))}
-          </div>
-        </AnimateIn>
-
-        <LocaleDivider />
-
-        <AnimateIn delay={150}>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {en.interests.map((item, index) => (
-              <article
-                key={item.title}
-                className="group h-full rounded-2xl border border-card-border bg-card p-7 transition-all duration-300 hover:border-accent-muted hover:shadow-lg"
-              >
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-light text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    {icons[interestIcons[index]]}
-                  </svg>
-                </div>
-                <EnglishBlock>
-                  <CardHeading as="h3" className="text-lg sm:text-xl">
-                    {item.title}
-                  </CardHeading>
-                  <BodyText muted className="mt-4">
-                    {item.description}
-                  </BodyText>
-                </EnglishBlock>
-              </article>
-            ))}
-          </div>
-        </AnimateIn>
+            </AnimateIn>
+          ))}
+        </div>
       </div>
     </section>
   );
