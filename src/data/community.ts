@@ -13,8 +13,7 @@ export const community = {
         "รับผิดชอบงานด้านสื่อสาร การจัดทำและเผยแพร่เนื้อหา รวมถึงการประสานงานกิจกรรมที่ส่งเสริมการพัฒนาชุมชนและการมีส่วนร่วมของสาธารณะ โดยทำงานควบคู่ไปกับภารกิจในสถาบันการศึกษา",
       highlights: [
         "กำกับดูแลงานสื่อและการสื่อสารของมูลนิธิ",
-        "วางแผนและผลิตเนื้อหาสำหรับการเผยแพร่สู่สาธารณะ",
-        "ประสานงานกิจกรรมเพื่อการพัฒนาชุมชน",
+        "วางแผนและผลิตเนื้อหาสำหรับการเผยแพร่สู่สาธารณะ"
       ],
       contributionsHeading: "หน้าที่หลัก",
     },
@@ -28,13 +27,12 @@ export const community = {
     },
     work: {
       role: "Head of Media Division",
-      organization: "Muslim Friends Foundation",
+      organization: "Muslim's Friend Foundation",
       description:
         "Responsible for communications, content production and dissemination, and coordinating activities that promote community development and public engagement, alongside my university duties.",
       highlights: [
         "Overseeing the foundation's media and communications work",
-        "Planning and producing content for public outreach",
-        "Coordinating community development activities",
+        "Planning and producing content for public outreach"
       ],
       contributionsHeading: "Key Responsibilities",
     },

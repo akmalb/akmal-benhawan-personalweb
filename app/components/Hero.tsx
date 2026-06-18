@@ -62,7 +62,7 @@ export function Hero({ profile }: HeroProps) {
 
               <div className="mt-9 flex flex-wrap gap-3">
                 <a
-                  href="#featured-research"
+                  href="#research"
                   className="inline-flex flex-col items-start rounded-lg bg-accent px-5 py-3 text-white shadow-md transition-all hover:bg-accent-hover hover:shadow-lg"
                 >
                   <span className="font-thai text-sm font-semibold">{th.buttons.viewResearch}</span>

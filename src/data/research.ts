@@ -6,6 +6,12 @@ export const research = {
       description:
         "สาขาความเชี่ยวชาญและประเด็นวิจัยที่เชื่อมโยงกับภารกิจของมหาวิทยาลัยและบริบทท้องถิ่นในจังหวัดยะลา",
     },
+    interestsSection: {
+      label: "สาขาความเชี่ยวชาญ",
+      title: "ความสนใจทางวิชาการ",
+      description:
+        "สาขาวิชาที่ใช้เป็นกรอบในการทำวิจัย พัฒนาระบบ และถ่ายทอดความรู้",
+    },
     featured: [
       {
         title: "การวิเคราะห์ข้อมูลและปัญญาประดิษฐ์เพื่อสนับสนุนการบริหารมหาวิทยาลัย",
@@ -26,12 +32,6 @@ export const research = {
         methods: ["GIS", "R", "SPSS"],
       },
     ],
-    section: {
-      label: "สาขาความเชี่ยวชาญ",
-      title: "ความสนใจทางวิชาการ",
-      description:
-        "สาขาวิชาที่ใช้เป็นกรอบในการทำวิจัย พัฒนาระบบ และถ่ายทอดความรู้",
-    },
     interests: [
       {
         title: "ปัญญาประดิษฐ์",
@@ -77,6 +77,12 @@ export const research = {
       description:
         "Areas of expertise and research aligned with the university's mission and the local context of Yala Province.",
     },
+    interestsSection: {
+      label: "Areas of Expertise",
+      title: "Academic Interests",
+      description:
+        "Disciplines that frame my research, system development, and knowledge-sharing activities.",
+    },
     featured: [
       {
         title: "Data Analytics and AI for University Management Support",
@@ -97,12 +103,6 @@ export const research = {
         methods: ["GIS", "R", "SPSS"],
       },
     ],
-    section: {
-      label: "Areas of Expertise",
-      title: "Academic Interests",
-      description:
-        "Disciplines that frame my research, system development, and knowledge-sharing activities.",
-    },
     interests: [
       {
         title: "Artificial Intelligence",
@@ -141,15 +141,6 @@ export const research = {
       },
     ],
   },
-  interestIcons: [
-    "brain",
-    "chart",
-    "network",
-    "database",
-    "community",
-    "map",
-    "transform",
-  ] as const,
 };
 
 export type Research = typeof research;

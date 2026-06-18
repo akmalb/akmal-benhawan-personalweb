@@ -1,7 +1,7 @@
 export const profile = {
   th: {
     name: "อักมาล เบ็ญหาวัน",
-    title: "นักวิชาการคอมพิวเตอร์",
+    title: "นักวิชาการคอมพิวเตอร์ ชำนาญการ",
     institution: "มหาวิทยาลัยราชภัฏยะลา",
     location: "จังหวัดยะลา ประเทศไทย",
     portfolioBadge: "เว็บไซต์ส่วนตัวทางวิชาการ",
@@ -14,23 +14,23 @@ export const profile = {
     },
     rolesHeading: "บทบาทและความรับผิดชอบหลัก",
     primaryRoles: [
-      "นักวิชาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏยะลา",
+      "นักวิชาการคอมพิวเตอร์ ชำนาญการ มหาวิทยาลัยราชภัฏยะลา",
       "นักวิจัยด้าน AI, Data Analytics และ Big Data",
       "ผู้พัฒนาระบบสารสนเทศมหาวิทยาลัย",
       "วิทยากรด้าน AI และการวิเคราะห์ข้อมูล",
       "หัวหน้าฝ่ายสื่อ มูลนิธิเพื่อนมุสลิม",
     ],
     aboutSection: {
-      label: "เกี่ยวกับข้าพเจ้า",
+      label: "เกี่ยวกับเรา",
       title: "ประวัติและบทบาททางวิชาการ",
       description:
         "ภาพรวมการปฏิบัติงานด้านเทคโนโลยีสารสนเทศ งานวิจัย และการบริการวิชาการ ณ มหาวิทยาลัยราชภัฏยะลา",
     },
     about: {
       paragraphs: [
-        "ผมนายอักมาล เบ็ญหาวัน ปฏิบัติหน้าที่นักวิชาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏยะลา โดยมีบทบาทสำคัญในการพัฒนาและดูแลระบบสารสนเทศของสถาบัน สนับสนุนงานวิจัย และถ่ายทอดความรู้ด้านเทคโนโลยีแก่บุคลากรภายในมหาวิทยาลัย",
-        "ด้านงานวิจัย ข้าพเจ้าให้ความสนใจกับปัญญาประดิษฐ์ การวิเคราะห์ข้อมูล แมชชีนเลิร์นนิง บิ๊กดาต้า การวิเคราะห์ความยากจน การวิเคราะห์เชิงพื้นที่ และการเปลี่ยนผ่านสู่ดิจิทัล โดยเฉพาะในบริบทของมหาวิทยาลัยและพื้นที่ภาคใต้",
-        "นอกจากภารกิจในมหาวิทยาลัย ข้าพเจ้าดำรงตำแหน่งหัวหน้าฝ่ายสื่อ มูลนิธิเพื่อนมุสลิม รับผิดชอบงานด้านสื่อสารและการเผยแพร่ข้อมูลเพื่อการพัฒนาชุมชน",
+        "ผมนายอักมาล เบ็ญหาวัน ปฏิบัติหน้าที่นักวิชาการคอมพิวเตอร์ ระดับชำนาญการ มหาวิทยาลัยราชภัฏยะลา โดยมีบทบาทสำคัญในการพัฒนาและดูแลระบบสารสนเทศของสถาบัน สนับสนุนงานวิจัย และถ่ายทอดความรู้ด้านเทคโนโลยีแก่บุคลากรภายในมหาวิทยาลัย",
+        "ด้านงานวิจัย ให้ความสนใจกับปัญญาประดิษฐ์ การวิเคราะห์ข้อมูล แมชชีนเลิร์นนิง บิ๊กดาต้า การวิเคราะห์ความยากจน การวิเคราะห์เชิงพื้นที่ และการเปลี่ยนผ่านสู่ดิจิทัล โดยเฉพาะในบริบทของมหาวิทยาลัยและพื้นที่ภาคใต้",
+        "นอกจากภารกิจในมหาวิทยาลัย ดำรงตำแหน่งหัวหน้าฝ่ายสื่อ มูลนิธิเพื่อนมุสลิม รับผิดชอบงานด้านสื่อสารและการเผยแพร่ข้อมูลเพื่อดำเนินการช่วยเหลือชุมชนผ่าน งานสังคมสงเคราะห์ การแพทย์ และการศึกษา",
       ],
       skillsHeading: "เครื่องมือและทักษะ",
       positionHeading: "ข้อมูลตำแหน่ง",
@@ -40,30 +40,13 @@ export const profile = {
         location: "พื้นที่ปฏิบัติงาน",
       },
     },
-    contactSection: {
-      label: "ติดต่อ",
-      title: "ช่องทางติดต่อ",
-      description:
-        "สำหรับการติดต่องานวิจัย ความร่วมมือด้านระบบสารสนเทศ หรือการบรรยาย",
-    },
-    contact: {
-      infoHeading: "ข้อมูลติดต่อ",
-      labels: {
-        email: "อีเมล",
-        institution: "สังกัด",
-        location: "พื้นที่ปฏิบัติงาน",
-      },
-      collaborateHeading: "ติดต่อเพื่อความร่วมมือ",
-      collaborateText:
-        "หากท่านสนใจร่วมงานด้านงานวิจัย การพัฒนาระบบสารสนเทศ หรือการเชิญบรรยาย สามารถติดต่อได้ทางอีเมล",
-      sendEmail: "ส่งอีเมล",
-      downloadCv: "ดาวน์โหลดประวัติ",
-    },
     footer: {
-      rights: "สงวนลิขสิทธิ์",
+      line1: "Akmal Benhawan",
+      line2: "Computer Technician Officer, Yala Rajabhat University",
+      copyright: "All rights reserved.",
     },
     metadata: {
-      title: "อักมาล เบ็ญหาวัน | นักวิชาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏยะลา",
+      title: "อักมาล เบ็ญหาวัน | นักวิชาการคอมพิวเตอร์ ชำนาญการ มหาวิทยาลัยราชภัฏยะลา",
       description:
         "เว็บไซต์ส่วนตัวทางวิชาการของนายอักมาล เบ็ญหาวัน นักวิชาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏยะลา งานวิจัยด้านปัญญาประดิษฐ์ การวิเคราะห์ข้อมูล และบิ๊กดาต้า",
       keywords: [
@@ -78,12 +61,12 @@ export const profile = {
   },
   en: {
     name: "Akmal Benhawan",
-    title: "Computer Academic Officer",
+    title: "Computer Technician Officer",
     institution: "Yala Rajabhat University",
     location: "Yala, Thailand",
     portfolioBadge: "Academic Portfolio",
     tagline:
-      "A computer academic officer engaged in research and the development of university information systems, with a focus on artificial intelligence, data analytics, and big data to support institutional management, research, and services.",
+      "A computer Technician officer engaged in research and the development of university information systems, with a focus on artificial intelligence, data analytics, and big data to support institutional management, research, and services.",
     buttons: {
       viewResearch: "Research Focus",
       downloadCv: "Download CV",
@@ -91,7 +74,7 @@ export const profile = {
     },
     rolesHeading: "Primary Roles",
     primaryRoles: [
-      "Computer Academic Officer, Yala Rajabhat University",
+      "Computer Technician Officer, Yala Rajabhat University",
       "Researcher in AI, Data Analytics, and Big Data",
       "University Information Systems Developer",
       "Lecturer in AI and Data Analytics",
@@ -105,7 +88,7 @@ export const profile = {
     },
     about: {
       paragraphs: [
-        "I serve as a Computer Academic Officer at Yala Rajabhat University, where I develop and maintain institutional information systems, support research activities, and share knowledge on technology with university personnel.",
+        "I serve as a Computer Technician Officer at Yala Rajabhat University, where I develop and maintain institutional information systems, support research activities, and share knowledge on technology with university personnel.",
         "My research interests include artificial intelligence, data analytics, machine learning, big data, poverty analytics, spatial analytics, and digital transformation—particularly within the university and Southern Thailand contexts.",
         "Beyond the university, I serve as Head of the Media Division at the Muslim Friends Foundation, overseeing communications and outreach for community development.",
       ],
@@ -117,37 +100,20 @@ export const profile = {
         location: "Location",
       },
     },
-    contactSection: {
-      label: "Contact",
-      title: "Get in Touch",
-      description:
-        "For research inquiries, information systems collaboration, or speaking engagements.",
-    },
-    contact: {
-      infoHeading: "Contact Information",
-      labels: {
-        email: "Email",
-        institution: "Affiliation",
-        location: "Location",
-      },
-      collaborateHeading: "Collaboration Inquiries",
-      collaborateText:
-        "For research collaboration, information systems development, or speaking invitations, please reach out via email.",
-      sendEmail: "Send Email",
-      downloadCv: "Download CV",
-    },
     footer: {
-      rights: "All rights reserved.",
+      line1: "Akmal Benhawan",
+      line2: "Computer Technician Officer, Yala Rajabhat University",
+      copyright: "All rights reserved.",
     },
     metadata: {
-      title: "Akmal Benhawan | Computer Academic Officer, Yala Rajabhat University",
+      title: "Akmal Benhawan | Computer Technician Officer, Yala Rajabhat University",
       description:
-        "Academic portfolio of Akmal Benhawan, Computer Academic Officer at Yala Rajabhat University. Research in artificial intelligence, data analytics, and big data.",
+        "Academic portfolio of Akmal Benhawan, Computer Technician Officer at Yala Rajabhat University. Research in artificial intelligence, data analytics, and big data.",
       keywords: [
-        "อักมาล เบ็ญาหวัน",
+        "อักมาล เบ็ญหาวัน",
         "Akmal Benhawan",
         "Yala Rajabhat University",
-        "Computer Academic Officer",
+        "Computer Technician Officer",
         "Data Analytics",
         "Artificial Intelligence",
       ],
@@ -167,13 +133,17 @@ export const profile = {
     "AI Prompt Engineering",
   ],
   socialLinks: [
-    { name: "GitHub", href: "https://github.com/akmalb", icon: "github" },
+    { name: "Facebook", href: null, icon: "facebook" },
+    { name: "YouTube", href: null, icon: "youtube" },
+    { name: "Scholar", href: "https://scholar.google.com/citations?user=FVhFR9YAAAAJ", icon: "google-scholar" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/akmal-benhawan-3267b5208/", icon: "linkedin" },
     { name: "Email", href: "mailto:akmal.b@yru.ac.th", icon: "email" },
   ],
   navLinks: [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
-    { href: "#featured-research", label: "Research" },
+    { href: "#research", label: "Research" },
+    { href: "#publications", label: "Publications" },
     { href: "#projects", label: "Projects" },
     { href: "#training", label: "Training" },
     { href: "#community", label: "Foundation" },

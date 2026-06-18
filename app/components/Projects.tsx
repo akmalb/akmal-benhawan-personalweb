@@ -21,13 +21,14 @@ export function Projects({ projects }: ProjectsProps) {
           {shared.map((project, index) => (
             <AnimateIn key={project.name} delay={index * 100}>
               <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-card-border bg-card transition-all duration-300 hover:border-accent-muted hover:shadow-lg">
-                <div className="relative aspect-[16/9] overflow-hidden bg-section-alt">
+                <div className="relative h-48 overflow-hidden bg-section-alt sm:h-52">
                   <Image
                     src={project.image}
-                    alt={project.name}
+                    alt=""
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 1024px) 100vw, 50vw"
+                    aria-hidden
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-7 sm:p-8">
