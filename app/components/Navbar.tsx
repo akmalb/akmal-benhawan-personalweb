@@ -1,11 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { navLinks } from "../data/portfolio";
+import type { Bilingual } from "@/src/data/types";
 import { BilingualNav } from "./Bilingual";
 import { ThemeToggle } from "./ThemeToggle";
 
-export function Navbar() {
+interface NavLink {
+  href: string;
+  label: Bilingual;
+}
+
+interface NavbarProps {
+  navLinks: NavLink[];
+}
+
+export function Navbar({ navLinks }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 

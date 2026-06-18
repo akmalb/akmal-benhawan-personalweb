@@ -1,4 +1,4 @@
-import type { Bilingual } from "../data/portfolio";
+import type { Bilingual } from "@/src/data/types";
 
 interface BilingualLabelProps {
   text: Bilingual;

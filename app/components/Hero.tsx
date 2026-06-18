@@ -1,9 +1,13 @@
 import Image from "next/image";
-import { personalInfo } from "../data/portfolio";
+import type { PersonalInfo } from "@/src/data/profile";
 import { BilingualBody, BilingualButton, BilingualInline } from "./Bilingual";
 import { AnimateIn } from "./AnimateIn";
 
-export function Hero() {
+interface HeroProps {
+  personalInfo: PersonalInfo;
+}
+
+export function Hero({ personalInfo }: HeroProps) {
   return (
     <section
       id="home"

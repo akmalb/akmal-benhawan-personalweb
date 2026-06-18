@@ -1,17 +1,28 @@
-import { contactContent, personalInfo, sectionHeadings } from "../data/portfolio";
+import type { ContactContent, PersonalInfo } from "@/src/data/profile";
+import type { Bilingual } from "@/src/data/types";
 import { BilingualBody, BilingualButton, BilingualHeading, BilingualInline } from "./Bilingual";
 import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
 
-export function Contact() {
+interface ContactProps {
+  section: {
+    label: Bilingual;
+    title: Bilingual;
+    description: Bilingual;
+  };
+  content: ContactContent;
+  personalInfo: PersonalInfo;
+}
+
+export function Contact({ section, content, personalInfo }: ContactProps) {
   return (
     <section id="contact" className="scroll-mt-28 bg-section-alt section-padding">
       <div className="container-width">
         <AnimateIn>
           <SectionHeading
-            label={sectionHeadings.contact.label}
-            title={sectionHeadings.contact.title}
-            description={sectionHeadings.contact.description}
+            label={section.label}
+            title={section.title}
+            description={section.description}
           />
         </AnimateIn>
 
@@ -19,7 +30,7 @@ export function Contact() {
           <AnimateIn delay={100}>
             <div className="h-full rounded-2xl border border-card-border bg-card p-8 sm:p-10">
               <BilingualHeading
-                text={contactContent.infoHeading}
+                text={content.infoHeading}
                 as="h3"
                 size="small"
               />
@@ -32,7 +43,7 @@ export function Contact() {
                   </div>
                   <div>
                     <BilingualInline
-                      text={contactContent.labels.email}
+                      text={content.labels.email}
                       primaryClassName="font-thai text-sm text-muted"
                       secondaryClassName="text-xs text-muted"
                     />
@@ -55,7 +66,7 @@ export function Contact() {
                   </div>
                   <div>
                     <BilingualInline
-                      text={contactContent.labels.institution}
+                      text={content.labels.institution}
                       primaryClassName="font-thai text-sm text-muted"
                       secondaryClassName="text-xs text-muted"
                     />
@@ -78,7 +89,7 @@ export function Contact() {
                   </div>
                   <div>
                     <BilingualInline
-                      text={contactContent.labels.location}
+                      text={content.labels.location}
                       primaryClassName="font-thai text-sm text-muted"
                       secondaryClassName="text-xs text-muted"
                     />
@@ -98,18 +109,18 @@ export function Contact() {
           <AnimateIn delay={200}>
             <div className="flex h-full flex-col justify-center rounded-2xl border border-accent/20 bg-accent p-8 text-white sm:p-10">
               <BilingualHeading
-                text={contactContent.collaborateHeading}
+                text={content.collaborateHeading}
                 as="h3"
                 size="card"
                 tone="inverted"
               />
-              <BilingualBody text={contactContent.collaborateText} tone="inverted" className="mt-5" />
+              <BilingualBody text={content.collaborateText} tone="inverted" className="mt-5" />
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href={`mailto:${personalInfo.email}`}
                   className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-accent transition-all hover:bg-blue-50"
                 >
-                  <BilingualButton text={contactContent.sendEmail} />
+                  <BilingualButton text={content.sendEmail} />
                   <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -119,7 +130,7 @@ export function Contact() {
                   download
                   className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-5 py-3 transition-all hover:bg-white/10"
                 >
-                  <BilingualButton text={contactContent.downloadCv} />
+                  <BilingualButton text={content.downloadCv} />
                 </a>
               </div>
             </div>

@@ -1,24 +1,36 @@
-import { aboutContent, personalInfo, sectionHeadings, skills } from "../data/portfolio";
+import type { AboutContent, PersonalInfo } from "@/src/data/profile";
+import type { Bilingual } from "@/src/data/types";
 import { BilingualBody, BilingualHeading, BilingualInline } from "./Bilingual";
 import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
 
-export function About() {
+interface AboutProps {
+  section: {
+    label: Bilingual;
+    title: Bilingual;
+    description: Bilingual;
+  };
+  content: AboutContent;
+  personalInfo: PersonalInfo;
+  skills: string[];
+}
+
+export function About({ section, content, personalInfo, skills }: AboutProps) {
   return (
     <section id="about" className="scroll-mt-28 bg-section-alt section-padding">
       <div className="container-width">
         <AnimateIn>
           <SectionHeading
-            label={sectionHeadings.about.label}
-            title={sectionHeadings.about.title}
-            description={sectionHeadings.about.description}
+            label={section.label}
+            title={section.title}
+            description={section.description}
           />
         </AnimateIn>
 
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
           <AnimateIn delay={100}>
             <div className="space-y-6">
-              {aboutContent.paragraphs.map((paragraph) => (
+              {content.paragraphs.map((paragraph) => (
                 <BilingualBody key={paragraph.en} text={paragraph} />
               ))}
             </div>
@@ -27,7 +39,7 @@ export function About() {
           <AnimateIn delay={200}>
             <div>
               <BilingualHeading
-                text={aboutContent.skillsHeading}
+                text={content.skillsHeading}
                 as="h3"
                 size="small"
                 className="mb-5"
@@ -45,7 +57,7 @@ export function About() {
 
               <div className="mt-10 rounded-2xl border border-card-border bg-card p-7">
                 <BilingualHeading
-                  text={aboutContent.positionHeading}
+                  text={content.positionHeading}
                   as="h3"
                   size="small"
                   className="mb-5"
@@ -53,7 +65,7 @@ export function About() {
                 <dl className="space-y-4 text-sm">
                   <div className="flex justify-between border-b border-card-border pb-4">
                     <BilingualInline
-                      text={aboutContent.positionLabels.role}
+                      text={content.positionLabels.role}
                       primaryClassName="font-thai text-muted"
                       secondaryClassName="text-xs text-muted"
                     />
@@ -65,7 +77,7 @@ export function About() {
                   </div>
                   <div className="flex justify-between border-b border-card-border pb-4">
                     <BilingualInline
-                      text={aboutContent.positionLabels.institution}
+                      text={content.positionLabels.institution}
                       primaryClassName="font-thai text-muted"
                       secondaryClassName="text-xs text-muted"
                     />
@@ -77,7 +89,7 @@ export function About() {
                   </div>
                   <div className="flex justify-between">
                     <BilingualInline
-                      text={aboutContent.positionLabels.location}
+                      text={content.positionLabels.location}
                       primaryClassName="font-thai text-muted"
                       secondaryClassName="text-xs text-muted"
                     />

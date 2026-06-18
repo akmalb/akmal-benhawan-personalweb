@@ -1,4 +1,5 @@
-import { researchInterests, sectionHeadings } from "../data/portfolio";
+import type { ResearchInterest } from "@/src/data/research";
+import type { Bilingual } from "@/src/data/types";
 import { BilingualBody, BilingualHeading } from "./Bilingual";
 import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
@@ -27,20 +28,29 @@ const icons: Record<string, React.ReactNode> = {
   ),
 };
 
-export function Research() {
+interface ResearchProps {
+  section: {
+    label: Bilingual;
+    title: Bilingual;
+    description: Bilingual;
+  };
+  interests: ResearchInterest[];
+}
+
+export function Research({ section, interests }: ResearchProps) {
   return (
     <section id="research" className="scroll-mt-28 bg-section-alt section-padding">
       <div className="container-width">
         <AnimateIn>
           <SectionHeading
-            label={sectionHeadings.research.label}
-            title={sectionHeadings.research.title}
-            description={sectionHeadings.research.description}
+            label={section.label}
+            title={section.title}
+            description={section.description}
           />
         </AnimateIn>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {researchInterests.map((item, index) => (
+          {interests.map((item, index) => (
             <AnimateIn key={item.title.en} delay={index * 60}>
               <article className="group h-full rounded-2xl border border-card-border bg-card p-7 transition-all duration-300 hover:border-accent-muted hover:shadow-lg">
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-light text-accent transition-colors group-hover:bg-accent group-hover:text-white">
