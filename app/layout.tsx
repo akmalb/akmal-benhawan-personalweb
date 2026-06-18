@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Source_Serif_4, Noto_Sans_Thai } from "next/font/google";
 import { ThemeProvider } from "./components/ThemeProvider";
+import { profile } from "@/src/data/profile";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,17 +28,9 @@ const notoSansThai = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  title: "อักมาล เบนหวัน | นักวิชาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏยะลา",
-  description:
-    "เว็บไซต์ส่วนตัวทางวิชาการของนายอักมาล เบนหวัน นักวิชาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏยะลา งานวิจัยด้านปัญญาประดิษฐ์ การวิเคราะห์ข้อมูล และบิ๊กดาต้า",
-  keywords: [
-    "อักมาล เบนหวัน",
-    "Akmal Benhawan",
-    "มหาวิทยาลัยราชภัฏยะลา",
-    "นักวิชาการคอมพิวเตอร์",
-    "Data Analytics",
-    "Artificial Intelligence",
-  ],
+  title: profile.th.metadata.title,
+  description: profile.th.metadata.description,
+  keywords: profile.th.metadata.keywords,
 };
 
 export default function RootLayout({

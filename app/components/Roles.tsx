@@ -15,7 +15,7 @@ export function Roles({ th, en }: RolesProps) {
           <ThaiBlock>
             <p className="mb-8 text-center text-sm font-bold text-accent-muted">{th.rolesHeading}</p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {th.primaryRoles.map((role, index) => (
+              {th.primaryRoles.map((role) => (
                 <div
                   key={role}
                   className="rounded-xl border border-card-border bg-card px-5 py-4 text-center transition-colors hover:border-accent-muted"
