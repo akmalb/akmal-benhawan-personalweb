@@ -135,7 +135,8 @@ export const profile = {
   socialLinks: [
     { name: "Facebook", href: null, icon: "facebook" },
     { name: "YouTube", href: null, icon: "youtube" },
-    { name: "LinkedIn", href: null, icon: "linkedin" },
+    { name: "Scholar", href: "https://scholar.google.com/citations?user=FVhFR9YAAAAJ", icon: "google-scholar" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/akmal-benhawan-3267b5208/", icon: "linkedin" },
     { name: "Email", href: "mailto:akmal.b@yru.ac.th", icon: "email" },
   ],
   navLinks: [
