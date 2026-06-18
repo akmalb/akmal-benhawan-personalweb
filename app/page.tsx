@@ -1,6 +1,5 @@
 ﻿import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { Roles } from "./components/Roles";
 import { About } from "./components/About";
 import { ResearchSection } from "./components/ResearchSection";
 import { Publications } from "./components/Publications";
@@ -18,16 +17,21 @@ import { training } from "@/src/data/training";
 import { community } from "@/src/data/community";
 import { contact } from "@/src/data/contact";
 
+const hasPublications = publications.th.items.length > 0;
+
+const navLinks = hasPublications
+  ? profile.navLinks
+  : profile.navLinks.filter((link) => link.href !== "#publications");
+
 export default function Home() {
   return (
     <>
-      <Navbar navLinks={profile.navLinks} siteName={profile.en.name} />
+      <Navbar navLinks={navLinks} siteName={profile.en.name} />
       <main>
         <Hero profile={profile} />
-        <Roles th={profile.th} en={profile.en} />
         <About th={profile.th} en={profile.en} skills={profile.skills} />
         <ResearchSection research={research} />
-        <Publications publications={publications} />
+        {hasPublications && <Publications publications={publications} />}
         <Projects projects={projects} />
         <Training training={training} />
         <Community community={community} />
