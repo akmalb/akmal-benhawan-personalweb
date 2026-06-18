@@ -2,7 +2,6 @@ import type { Profile } from "@/src/data/profile";
 import { AnimateIn } from "./AnimateIn";
 import {
   BilingualLabel,
-  BilingualText,
   BilingualTitle,
   BilingualValue,
   SectionHeading,
@@ -17,6 +16,11 @@ interface AboutProps {
 /** Paragraph indices shown in About: intro (0) and foundation (2). Index 1 (research interests) lives in Research only. */
 const ABOUT_PARAGRAPH_INDICES = [0, 2] as const;
 
+const CORE_EXPERTISE_HEADING = {
+  th: "ความเชี่ยวชาญหลัก",
+  en: "Core Expertise",
+} as const;
+
 export function About({ th, en, skills }: AboutProps) {
   return (
     <section id="about" className="scroll-mt-28 bg-section-alt section-padding">
@@ -27,19 +31,33 @@ export function About({ th, en, skills }: AboutProps) {
 
         <AnimateIn delay={100}>
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
-            <div className="max-w-prose space-y-5">
-              {ABOUT_PARAGRAPH_INDICES.map((index) => (
-                <BilingualText
-                  key={th.about.paragraphs[index]}
-                  th={th.about.paragraphs[index]}
-                  en={en.about.paragraphs[index]}
-                />
-              ))}
+            <div className="max-w-prose space-y-8">
+              <div className="space-y-5">
+                {ABOUT_PARAGRAPH_INDICES.map((index) => (
+                  <p
+                    key={`th-${index}`}
+                    className="font-thai text-[1.0625rem] leading-[1.85] text-foreground"
+                  >
+                    {th.about.paragraphs[index]}
+                  </p>
+                ))}
+              </div>
+
+              <div className="space-y-5 border-t border-card-border/60 pt-6">
+                {ABOUT_PARAGRAPH_INDICES.map((index) => (
+                  <p
+                    key={`en-${index}`}
+                    className="text-[0.875rem] leading-[1.75] text-muted"
+                  >
+                    {en.about.paragraphs[index]}
+                  </p>
+                ))}
+              </div>
 
               <div className="rounded-2xl border border-card-border bg-card p-6">
                 <BilingualTitle
-                  th={th.rolesHeading}
-                  en={en.rolesHeading}
+                  th={CORE_EXPERTISE_HEADING.th}
+                  en={CORE_EXPERTISE_HEADING.en}
                   as="h3"
                   size="small"
                   className="mb-4"

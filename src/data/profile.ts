@@ -133,7 +133,9 @@ export const profile = {
     "AI Prompt Engineering",
   ],
   socialLinks: [
-    { name: "GitHub", href: "https://github.com/akmalb", icon: "github" },
+    { name: "Facebook", href: null, icon: "facebook" },
+    { name: "YouTube", href: null, icon: "youtube" },
+    { name: "LinkedIn", href: null, icon: "linkedin" },
     { name: "Email", href: "mailto:akmal.b@yru.ac.th", icon: "email" },
   ],
   navLinks: [
