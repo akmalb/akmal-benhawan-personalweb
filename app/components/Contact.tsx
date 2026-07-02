@@ -124,7 +124,8 @@ export function Contact({ contact, profile }: ContactSectionProps) {
                 </a>
                 <a
                   href={cvUrl}
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex flex-col items-start rounded-lg border border-white/30 px-5 py-3 transition-all hover:bg-white/10"
                 >
                   <span className="font-thai text-sm font-semibold">{th.downloadCv}</span>
