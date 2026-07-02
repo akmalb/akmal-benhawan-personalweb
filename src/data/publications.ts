@@ -1,30 +1,75 @@
 export type PublicationItem = {
   title: string;
-  venue?: string;
-  year?: string;
-  type?: string;
+  authors: string;
+  venue: string;
+  year: string;
+  type: "Journal Article" | "Conference Paper" | "Research Article";
+  url?: string;
 };
 
 export const publications = {
   th: {
-    section: {
-      label: "ผลงานตีพิมพ์และการนำเสนอ",
-      title: "ผลงานวิชาการและการนำเสนอ",
-      description:
-        "รายการผลงานวิชาการ บทความ และการนำเสนอผลงานวิจัย",
-    },
-    placeholder: "อยู่ระหว่างรวบรวมข้อมูลผลงานวิชาการ",
-    items: [] as PublicationItem[],
+    label: "ผลงานวิชาการ",
+    title: "ผลงานวิชาการและการนำเสนอ",
+    subtitle: "Publications & Presentations",
+    description:
+      "ผลงานประชุมวิชาการและบทความที่เกี่ยวข้องกับการวิเคราะห์ข้อมูล การเรียนรู้ของเครื่อง และการประยุกต์ใช้เทคโนโลยีสารสนเทศ",
+    emptyText: "อยู่ระหว่างรวบรวมข้อมูลผลงานวิชาการ",
+    items: [
+      {
+        title: "Forecasting water inflow for bang lang dam",
+        authors:
+          "Akmal Benhawan, Sureena Matayong, Chidchanok Choksuchat",
+        venue:
+          "2022 IEEE 12th Annual Computing and Communication Workshop and Conference (CCWC)",
+        year: "2022",
+        type: "Conference Paper",
+        url: "https://ieeexplore.ieee.org/abstract/document/9720865",
+      },
+      {
+        title:
+          "Self-Care Problems Classifications with SCADI Dataset: The Tree-Based Feature Selection",
+        authors:
+          "Sureena Matayong, Akmal Benhawan, Teeradej Phetkaew",
+        venue:
+          "2025 10th International Conference on Big Data Analytics (ICBDA)",
+        year: "2025",
+        type: "Conference Paper",
+        url: "https://ieeexplore.ieee.org/abstract/document/11211245",
+      },
+    ] satisfies PublicationItem[],
   },
+
   en: {
-    section: {
-      label: "Publications & Presentations",
-      title: "Publications & Presentations",
-      description:
-        "Academic publications, articles, and research presentations.",
-    },
-    placeholder: "Publication records are being updated.",
-    items: [] as PublicationItem[],
+    label: "Publications",
+    title: "Publications & Presentations",
+    subtitle: "Academic Publications",
+    description:
+      "Selected conference papers and academic outputs related to data analytics, machine learning, and applied information technology.",
+    emptyText: "Publication records are being updated.",
+    items: [
+      {
+        title: "Forecasting water inflow for bang lang dam",
+        authors:
+          "Akmal Benhawan, Sureena Matayong, Chidchanok Choksuchat",
+        venue:
+          "2022 IEEE 12th Annual Computing and Communication Workshop and Conference (CCWC)",
+        year: "2022",
+        type: "Conference Paper",
+        url: "https://ieeexplore.ieee.org/abstract/document/9720865",
+      },
+      {
+        title:
+          "Self-Care Problems Classifications with SCADI Dataset: The Tree-Based Feature Selection",
+        authors:
+          "Sureena Matayong, Akmal Benhawan, Teeradej Phetkaew",
+        venue:
+          "2025 10th International Conference on Big Data Analytics (ICBDA)",
+        year: "2025",
+        type: "Conference Paper",
+        url: "https://ieeexplore.ieee.org/abstract/document/11211245",
+      },
+    ] satisfies PublicationItem[],
   },
 };
 

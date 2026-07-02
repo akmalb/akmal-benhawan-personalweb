@@ -9,12 +9,14 @@ interface PublicationsProps {
 export function Publications({ publications }: PublicationsProps) {
   const { th, en } = publications;
   const hasItems = th.items.length > 0;
+  const thSection = { label: th.label, title: th.title, description: th.description };
+  const enSection = { label: en.label, title: en.title, description: en.description };
 
   return (
     <section id="publications" className="scroll-mt-28 bg-section-alt section-padding">
       <div className="container-width">
         <AnimateIn>
-          <SectionHeading th={th.section} en={en.section} />
+          <SectionHeading th={thSection} en={enSection} />
         </AnimateIn>
 
         <AnimateIn delay={100}>
@@ -36,7 +38,7 @@ export function Publications({ publications }: PublicationsProps) {
             </div>
           ) : (
             <div className="rounded-2xl border border-dashed border-card-border bg-card/50 px-6 py-10 text-center">
-              <BilingualText th={th.placeholder} en={en.placeholder} />
+              <BilingualText th={th.emptyText} en={en.emptyText} />
             </div>
           )}
         </AnimateIn>
