@@ -121,7 +121,7 @@ export const profile = {
   },
   email: "akmal.b@yru.ac.th",
   profileImage: "/images/profile.svg",
-  cvUrl: "/cv/akmal-benhawan-cv.pdf",
+  cvUrl: "/cv/Akmal-Benhawan-CV.pdf",
   skills: [
     "Python",
     "R",
