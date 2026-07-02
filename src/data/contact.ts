@@ -23,7 +23,7 @@ export const contact = {
     collaborateText:
       "หากท่านสนใจร่วมงานด้านงานวิจัย การพัฒนาระบบสารสนเทศ หรือการเชิญบรรยาย สามารถติดต่อได้ทางอีเมล",
     sendEmail: "ส่งอีเมล",
-    downloadCv: "ดาวน์โหลดประวัติ",
+    downloadCv: "ดู CV",
   },
   en: {
     section: {
@@ -49,7 +49,7 @@ export const contact = {
     collaborateText:
       "For research collaboration, information systems development, or speaking invitations, please reach out via email.",
     sendEmail: "Send Email",
-    downloadCv: "Download CV",
+    downloadCv: "View CV",
   },
 };
 

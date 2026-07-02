@@ -9,7 +9,7 @@ export const profile = {
       "นักวิชาการคอมพิวเตอร์ที่ทำงานวิจัยและพัฒนาระบบสารสนเทศของมหาวิทยาลัย โดยมุ่งเน้นปัญญาประดิษฐ์ การวิเคราะห์ข้อมูล และบิ๊กดาต้า เพื่อสนับสนุนการบริหารจัดการ งานวิจัย และการบริการของสถาบัน",
     buttons: {
       viewResearch: "ดูทิศทางงานวิจัย",
-      downloadCv: "ดาวน์โหลดประวัติ",
+      downloadCv: "ดู CV",
       contact: "ติดต่อ",
     },
     rolesHeading: "บทบาทและความรับผิดชอบหลัก",
@@ -69,7 +69,7 @@ export const profile = {
       "A computer Technician officer engaged in research and the development of university information systems, with a focus on artificial intelligence, data analytics, and big data to support institutional management, research, and services.",
     buttons: {
       viewResearch: "Research Focus",
-      downloadCv: "Download CV",
+      downloadCv: "View CV",
       contact: "Contact",
     },
     rolesHeading: "Primary Roles",

@@ -70,7 +70,8 @@ export function Hero({ profile }: HeroProps) {
                 </a>
                 <a
                   href={cvUrl}
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex flex-col items-start rounded-lg border border-card-border bg-card px-5 py-3 text-foreground transition-all hover:border-accent hover:text-accent"
                 >
                   <span className="font-thai text-sm font-semibold">{th.buttons.downloadCv}</span>
