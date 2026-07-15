@@ -69,6 +69,13 @@ export function Hero({ profile }: HeroProps) {
                   <span className="text-[0.6875rem] font-normal text-blue-100/90">{en.buttons.viewResearch}</span>
                 </a>
                 <a
+                  href="/cv"
+                  className="inline-flex flex-col items-start rounded-lg border border-card-border bg-card px-5 py-3 text-foreground transition-all hover:border-accent hover:text-accent"
+                >
+                  <span className="font-thai text-sm font-semibold">ดู Academic CV</span>
+                  <span className="text-[0.6875rem] font-normal text-muted">View Academic CV</span>
+                </a>
+                <a
                   href={cvUrl}
                   target="_blank"
                   rel="noopener noreferrer"
