@@ -42,7 +42,7 @@ export const profile = {
     },
     footer: {
       line1: "Akmal Benhawan",
-      line2: "Computer Technician Officer, Yala Rajabhat University",
+      line2: "Computer Technical Officer, Professional Level, Yala Rajabhat University",
       copyright: "All rights reserved.",
     },
     metadata: {
@@ -61,12 +61,12 @@ export const profile = {
   },
   en: {
     name: "Akmal Benhawan",
-    title: "Computer Technician Officer",
+    title: "Computer Technical Officer, Professional Level",
     institution: "Yala Rajabhat University",
     location: "Yala, Thailand",
     portfolioBadge: "Academic Portfolio",
     tagline:
-      "A computer Technician officer engaged in research and the development of university information systems, with a focus on artificial intelligence, data analytics, and big data to support institutional management, research, and services.",
+      "A Computer Technical Officer, Professional Level, engaged in research and the development of university information systems, with a focus on artificial intelligence, data analytics, and big data to support institutional management, research, and services.",
     buttons: {
       viewResearch: "Research Focus",
       downloadCv: "View CV",
@@ -74,7 +74,7 @@ export const profile = {
     },
     rolesHeading: "Primary Roles",
     primaryRoles: [
-      "Computer Technician Officer, Yala Rajabhat University",
+      "Computer Technical Officer, Professional Level, Yala Rajabhat University",
       "Researcher in AI, Data Analytics, and Big Data",
       "University Information Systems Developer",
       "Lecturer in AI and Data Analytics",
@@ -88,7 +88,7 @@ export const profile = {
     },
     about: {
       paragraphs: [
-        "I serve as a Computer Technician Officer at Yala Rajabhat University, where I develop and maintain institutional information systems, support research activities, and share knowledge on technology with university personnel.",
+        "I serve as a Computer Technical Officer, Professional Level at Yala Rajabhat University, where I develop and maintain institutional information systems, support research activities, and share knowledge on technology with university personnel.",
         "My research interests include artificial intelligence, data analytics, machine learning, big data, poverty analytics, spatial analytics, and digital transformation—particularly within the university and Southern Thailand contexts.",
         "Beyond the university, I serve as Head of the Media Division at the Muslim Friends Foundation, overseeing communications and outreach for community development.",
       ],
@@ -102,18 +102,18 @@ export const profile = {
     },
     footer: {
       line1: "Akmal Benhawan",
-      line2: "Computer Technician Officer, Yala Rajabhat University",
+      line2: "Computer Technical Officer, Professional Level, Yala Rajabhat University",
       copyright: "All rights reserved.",
     },
     metadata: {
-      title: "Akmal Benhawan | Computer Technician Officer, Yala Rajabhat University",
+      title: "Akmal Benhawan | Computer Technical Officer, Professional Level, Yala Rajabhat University",
       description:
-        "Academic portfolio of Akmal Benhawan, Computer Technician Officer at Yala Rajabhat University. Research in artificial intelligence, data analytics, and big data.",
+        "Academic portfolio of Akmal Benhawan, Computer Technical Officer, Professional Level at Yala Rajabhat University. Research in artificial intelligence, data analytics, and big data.",
       keywords: [
         "อักมาล เบ็ญหาวัน",
         "Akmal Benhawan",
         "Yala Rajabhat University",
-        "Computer Technician Officer",
+        "Computer Technical Officer, Professional Level",
         "Data Analytics",
         "Artificial Intelligence",
       ],
