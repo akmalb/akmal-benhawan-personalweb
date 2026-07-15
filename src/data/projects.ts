@@ -60,9 +60,9 @@ export const projects = {
     ],
   },
   shared: [
-    { name: "YRU Track", image: "/images/projects/yru-track.svg" },
-    { name: "YRU Service", image: "/images/projects/yru-service.svg" },
-    { name: "YRU Joins", image: "/images/projects/yru-joins.svg" },
+    { name: "YRU Track", image: "/images/projects/yru-tracks.png" },
+    { name: "YRU Service", image: "/images/projects/yru-service.png" },
+    { name: "YRU Joins", image: "/images/projects/yru-joins.png" },
     { name: "YRU Big Data", image: "/images/projects/yru-bigdata.svg" },
   ],
 };
