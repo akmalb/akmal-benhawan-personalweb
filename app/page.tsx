@@ -10,6 +10,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
 import { profile } from "@/src/data/profile";
+import { education } from "@/src/data/education";
 import { research } from "@/src/data/research";
 import { publications } from "@/src/data/publications";
 import { projects } from "@/src/data/projects";
@@ -29,7 +30,12 @@ export default function Home() {
       <Navbar navLinks={navLinks} siteName={profile.en.name} />
       <main>
         <Hero profile={profile} />
-        <About th={profile.th} en={profile.en} skills={profile.skills} />
+        <About
+          th={profile.th}
+          en={profile.en}
+          skills={profile.skills}
+          education={education}
+        />
         <ResearchSection research={research} />
         {hasPublications && <Publications publications={publications} />}
         <Projects projects={projects} />

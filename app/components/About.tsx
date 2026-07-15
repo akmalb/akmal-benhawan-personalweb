@@ -1,3 +1,4 @@
+import type { Education } from "@/src/data/education";
 import type { Profile } from "@/src/data/profile";
 import { AnimateIn } from "./AnimateIn";
 import {
@@ -11,6 +12,7 @@ interface AboutProps {
   th: Profile["th"];
   en: Profile["en"];
   skills: Profile["skills"];
+  education: Education;
 }
 
 /** Paragraph indices shown in About: intro (0) and foundation (2). Index 1 (research interests) lives in Research only. */
@@ -21,7 +23,7 @@ const CORE_EXPERTISE_HEADING = {
   en: "Core Expertise",
 } as const;
 
-export function About({ th, en, skills }: AboutProps) {
+export function About({ th, en, skills, education }: AboutProps) {
   return (
     <section id="about" className="scroll-mt-28 bg-section-alt section-padding">
       <div className="container-width">
@@ -147,6 +149,57 @@ export function About({ th, en, skills }: AboutProps) {
                     />
                   </div>
                 </dl>
+              </div>
+
+              <div className="rounded-2xl border border-card-border bg-card p-6">
+                <BilingualTitle
+                  th={education.heading.th}
+                  en={education.heading.en}
+                  as="h3"
+                  size="small"
+                  className="mb-4"
+                />
+                <ul className="space-y-4">
+                  {education.items.map((item) => (
+                    <li
+                      key={item.en.degree}
+                      className="border-b border-card-border pb-4 last:border-b-0 last:pb-0"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <p className="font-thai text-sm font-semibold leading-snug text-foreground">
+                            {item.th.degree}
+                          </p>
+                          <p className="mt-0.5 text-xs leading-snug text-muted">
+                            {item.en.degree}
+                          </p>
+                        </div>
+                        <div className="shrink-0 text-right">
+                          <p className="font-thai text-xs font-medium text-accent">
+                            {item.th.year}
+                          </p>
+                          <p className="text-[0.6875rem] text-muted">{item.en.year}</p>
+                        </div>
+                      </div>
+                      <p className="mt-2 font-thai text-xs leading-relaxed text-muted">
+                        {item.th.institution}
+                      </p>
+                      <p className="text-[0.6875rem] leading-relaxed text-muted">
+                        {item.en.institution}
+                      </p>
+                      {item.th.detail && item.en.detail && (
+                        <>
+                          <p className="mt-2 font-thai text-xs leading-relaxed text-foreground/80">
+                            {item.th.detail}
+                          </p>
+                          <p className="mt-0.5 text-[0.6875rem] leading-relaxed text-muted">
+                            {item.en.detail}
+                          </p>
+                        </>
+                      )}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
